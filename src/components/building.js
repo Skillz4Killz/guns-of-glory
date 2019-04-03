@@ -1,12 +1,13 @@
 import React from "react"
 
 export default props => {
-  const levelKeys = Object.keys(props.building)
-  const levelValues = Object.values(props.building)
+  const levelKeys = Object.keys(props.building).filter(l =>
+    l.startsWith("level_")
+  )
   return (
     <div>
       {levelKeys.map((key, index) => {
-        const level = levelValues[index]
+        const level = props.building[key]
         return (
           <div key={index}>
             <h1>

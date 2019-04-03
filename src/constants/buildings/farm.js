@@ -1,4 +1,7 @@
 export default {
+  name: "Farm",
+  category: "outer",
+  maxBuildingsAllowed: 8,
   level_1: {
     required: [{ name: "castle", level: 1 }],
     resources: { food: 0, wood: 72000, iron: 0, silver: 0, badges: 0 },

@@ -1,4 +1,7 @@
 export default {
+  name: "Academy",
+  category: "inner",
+  maxBuildingsAllowed: 1,
   level_1: {
     required: [{ name: 'castle', level: 4 }],
     resources: {
