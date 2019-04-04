@@ -6,8 +6,8 @@ import SEO from "../components/seo"
 import Tracker from "../components/tracker"
 
 import academy from "../constants/buildings/academy"
-import barracks from "../constants/buildings/barracks"
-import farm from "../constants/buildings/farm"
+// import barracks from "../constants/buildings/barracks"
+// import farm from "../constants/buildings/farm"
 
 const IndexPage = () => (
   <Layout>

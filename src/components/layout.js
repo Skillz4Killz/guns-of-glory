@@ -36,9 +36,14 @@ const Layout = ({ children }) => (
         >
           <main>{children}</main>
           <footer>
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
+            <p>© {new Date().getFullYear()}, Copyright GoGHub</p>
+            <p>
+              GoGHub is not affiliated or part of Guns of Glory. All Guns of
+              Glory copyrights and art assets belong to Guns of Glory.
+            </p>
+            Made by <a href="https://discord.gg/rWMuMdk">Skillz4Killz</a> and
+            {"  "}
+            <a href="https://twitter.com/AngeloCant1">AngeloC</a>
           </footer>
         </div>
       </>
