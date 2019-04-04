@@ -52,7 +52,11 @@ export default class CustomizedSlider extends React.Component {
         {resourceTypes.map((type, index) => {
           const neededResource = levelKeys
             .slice(this.state.value)
-            .map(key => this.props.building[key].resources[type])
+            .map(
+              key =>
+                this.props.building[key].resources[type] *
+                this.props.building.maxBuildingsAllowed
+            )
             .reduce((prev, current) => prev + current)
           return neededResource ? (
             <p key={index}>
