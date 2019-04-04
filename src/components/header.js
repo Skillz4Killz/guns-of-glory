@@ -1,6 +1,7 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import TextLogo from "../images/gunsofglory.png"
 
 const Header = ({ siteTitle }) => (
   <header
@@ -16,6 +17,7 @@ const Header = ({ siteTitle }) => (
         padding: `1.45rem 1.0875rem`,
       }}
     >
+      <img src={TextLogo} alt="game logo" />
       <h1 style={{ margin: 0 }}>
         <Link
           to="/"
@@ -23,9 +25,7 @@ const Header = ({ siteTitle }) => (
             color: `white`,
             textDecoration: `none`,
           }}
-        >
-          {siteTitle}
-        </Link>
+        />
       </h1>
     </div>
   </header>
