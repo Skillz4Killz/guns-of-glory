@@ -28,31 +28,31 @@ const Layout = ({ children }) => (
         <Header siteTitle={data.site.siteMetadata.title} />
         <div>
           <main>{children}</main>
-          <footer
-            className="footer"
-            bottomThreshold={50}
-            style={{
-              backgroundColor: "#050E19",
-              padding: "1rem",
-              fontSize: "14px",
-              fontFamily: "Helvetica",
-              color: "white",
-              textAlign: "center",
-              bottom: "0px",
-              position: "fixed",
-              width: "100%",
-            }}
-          >
-            <p>© {new Date().getFullYear()}, Copyright GoGHub</p>
-            <p>
-              GoGHub is not affiliated or part of Guns of Glory. All Guns of
-              Glory copyrights and art assets belong to Guns of Glory.
-            </p>
-            Made by <a href="https://discord.gg/rWMuMdk">Skillz4Killz</a> and
-            {"  "}
-            <a href="https://twitter.com/AngeloCant1">AngeloC</a>
-          </footer>
         </div>
+        <footer
+          className="footer"
+          bottomThreshold={50}
+          style={{
+            backgroundColor: "#050E19",
+            padding: "1rem",
+            fontSize: "14px",
+            fontFamily: "Helvetica",
+            color: "white",
+            textAlign: "center",
+            bottom: "0px",
+            width: "100%",
+            marginTop: "15  px",
+          }}
+        >
+          <p>© {new Date().getFullYear()}, Copyright GoGHub</p>
+          <p>
+            GoGHub is not affiliated or part of Guns of Glory. All Guns of Glory
+            copyrights and art assets belong to Guns of Glory.
+          </p>
+          Made by <a href="https://discord.gg/rWMuMdk">Skillz4Killz</a> and
+          {"  "}
+          <a href="https://twitter.com/AngeloCant1">AngeloC</a>
+        </footer>
       </>
     )}
   />

@@ -2,6 +2,7 @@ import React from "react"
 import Tracker from "../components/tracker"
 
 import academy from "../constants/buildings/academy"
+import Layout from "./layout"
 const Profile = () => (
   <div>
     <h1>Your profile</h1>
