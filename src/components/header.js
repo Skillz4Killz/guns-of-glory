@@ -10,13 +10,7 @@ const Header = ({ siteTitle }) => (
       marginBottom: `1.45rem`,
     }}
   >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
+    <div>
       <img src={TextLogo} alt="game logo" />
       <h1 style={{ margin: 0 }}>
         <Link
