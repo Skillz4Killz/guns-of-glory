@@ -1,32 +1,84 @@
-export const isBrowser = () => typeof window !== "undefined"
+import auth0 from "auth0-js"
 
-export const getUser = () =>
-  isBrowser() && window.localStorage.getItem("gatsbyUser")
-    ? JSON.parse(window.localStorage.getItem("gatsbyUser"))
-    : {}
+export const isBrowser = typeof window !== "undefined"
 
-const setUser = user =>
-  window.localStorage.setItem("gatsbyUser", JSON.stringify(user))
+const tokens = {
+  idToken: false,
+  accessToken: false,
+}
 
-export const handleLogin = ({ username, password }) => {
-  if (username === `john` && password === `pass`) {
-    return setUser({
-      username: `john`,
-      name: `Johnny`,
-      email: `johnny@example.org`,
+let user = {}
+
+export const isAuthenticated = () => {
+  return tokens.idToken !== false
+}
+
+const auth = isBrowser
+  ? new auth0.WebAuth({
+      domain: process.env.AUTH0_DOMAIN,
+      clientID: process.env.AUTH0_CLIENTID,
+      redirectUri: process.env.AUTH0_CALLBACK,
+      responseType: "token id_token",
+      scope: "openid profile email",
     })
+  : {}
+
+export const login = () => {
+  if (!isBrowser) {
+    return
   }
 
-  return false
+  auth.authorize()
 }
 
-export const isLoggedIn = () => {
-  const user = getUser()
+export const logout = () => {
+  tokens.accessToken = false
+  tokens.idToken = false
+  user = {}
+  localStorage.setItem("isLoggedIn", false)
 
-  return !!user.username
+  auth.logout({
+    returnTo: "http://localhost:8000",
+  })
 }
 
-export const logout = callback => {
-  setUser({})
-  callback()
+const setSession = (cb = () => {}) => (err, authResult) => {
+  if (err) {
+    if (err.error === "login_required") {
+      login()
+    }
+  }
+
+  if (authResult && authResult.accessToken && authResult.idToken) {
+    tokens.idToken = authResult.idToken
+    tokens.accessToken = authResult.accessToken
+
+    auth.client.userInfo(tokens.accessToken, (_err, userProfile) => {
+      user = userProfile
+
+      localStorage.setItem("isLoggedIn", true)
+
+      cb()
+    })
+  }
+}
+
+export const checkSession = callback => {
+  const isLoggedIn = localStorage.getItem("isLoggedIn")
+  console.log({ isLoggedIn })
+  if (isLoggedIn === "false") {
+    console.log("Not logged in")
+    callback()
+    return
+  }
+  auth.checkSession({}, setSession(callback))
+}
+
+export const handleAuthentication = callback => {
+  console.log("parsing")
+  auth.parseHash(setSession(callback))
+}
+
+export const getProfile = () => {
+  return user
 }

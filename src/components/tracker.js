@@ -9,7 +9,7 @@ import SingleCard from "./singleCard"
 const levelFormatter = v => `Level ${v}`
 
 const SliderWithTooltip = createSliderWithTooltip(Slider)
-const resourceTypes = ["food", "wood", "iron", "silver", "badges"]
+// const resourceTypes = ["food", "wood", "iron", "silver", "badges"]
 
 export default class CustomizedSlider extends React.Component {
   constructor(props) {
