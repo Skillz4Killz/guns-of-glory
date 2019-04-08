@@ -31,11 +31,11 @@ const Card = props => (
     </div>
     <div className="levelup">
       <a>
-        <img src={Minus} alt="minus" />
+        <img src={Minus} alt="minus" className="levelupButton" />
       </a>
-      <p>Level {props.level}</p>
+      <p className="levelupText">Level {props.level}</p>
       <a>
-        <img src={Plus} alt="plus" />
+        <img src={Plus} alt="plus" className="levelupButton" />
       </a>
     </div>
   </div>
