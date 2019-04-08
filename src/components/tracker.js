@@ -4,6 +4,8 @@ import "rc-slider/assets/index.css"
 import React from "react"
 import Slider, { createSliderWithTooltip } from "rc-slider"
 
+import SingleCard from "./singleCard"
+
 const levelFormatter = v => `Level ${v}`
 
 const SliderWithTooltip = createSliderWithTooltip(Slider)
@@ -42,9 +44,23 @@ export default class CustomizedSlider extends React.Component {
     const levelKeys = Object.keys(this.props.building).filter(l =>
       l.startsWith("level_")
     )
+
     return (
       <div>
-        <img
+        <SingleCard
+          image="https://cdn.discordapp.com/attachments/416884846611398667/562757696076382218/farm.jpg"
+          name="Academy"
+          text={`Resources left to lvl ${levelKeys.length}`}
+          resources={[
+            { type: "Food", amount: "5K" },
+            { type: "Wood", amount: "110K" },
+            { type: "Iron", amount: "90M" },
+            { type: "Silver", amount: "10M" },
+          ]}
+          level={1}
+          maxLevel={40}
+        />
+        {/*<img
           src="https://cdn.discordapp.com/attachments/416884846611398667/562757696076382218/farm.jpg"
           alt={this.props.building.name}
         />
@@ -74,7 +90,7 @@ export default class CustomizedSlider extends React.Component {
             max={levelKeys.length}
             tipFormatter={levelFormatter}
           />
-        )}
+        )}*/}
       </div>
     )
   }
