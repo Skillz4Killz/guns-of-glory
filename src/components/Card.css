@@ -26,10 +26,10 @@
   height: 26px;
   background: #bc9060;
   color: white;
-  font-size: 15px;
+  font-size: 18px;
   border-radius: 50%;
   position: absolute;
-  right: 15px;
+  right: 16px;
   top: 16px;
 }
 
@@ -39,7 +39,7 @@
   font-size: 24px;
   text-align: center;
   color: #bc9060;
-  margin-top: -20px;
+  margin-top: -16px;
 }
 
 .resources {
@@ -48,12 +48,12 @@
   justify-content: space-around;
   flex-wrap: wrap;
   font-family: "Times New Roman";
-  font-weight: bold;
-  font-size: 14px;
+  font-size: 16px;
   text-align: left;
   color: #bc9060;
-  margin-top: -10px;
-  margin-bottom: -10px;
+  margin-top: -5px;
+  margin-bottom: -5px;
+  text-align: center;
 }
 
 .resourceName {
@@ -63,9 +63,9 @@
 
 .resourcesLeft {
   font-weight: normal;
-  font-size: 16px;
+  font-size: 18px;
   color: #bc9060;
-  margin-top: -25px;
+  margin-top: -16px;
 }
 
 .levelup {
@@ -74,14 +74,14 @@
   justify-content: space-around;
   flex-wrap: wrap;
   width: 248px;
-  height: 40.71px;
+  height: 40px;
   border-radius: 5px;
   background: transparent;
   border: 2px solid #bc9060;
   margin: auto;
   text-transform: uppercase;
   font-size: 18px;
-  margin-top: 80px;
+  margin-top: 60px;
 }
 
 .levelupText {
