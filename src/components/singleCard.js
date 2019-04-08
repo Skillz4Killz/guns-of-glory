@@ -2,11 +2,13 @@ import React from "react"
 import "./Card.css"
 import { Link } from "gatsby"
 import AcademyImage from "../images/academy.png"
+import Minus from "../images/minus.png"
+import Plus from "../images/plus.png"
 
 const imageAssets = {
   academy: AcademyImage,
-  food: AcademyImage,
-  wood: AcademyImage,
+  minus: Minus,
+  plus: Plus,
 }
 
 const Card = props => (
@@ -26,6 +28,15 @@ const Card = props => (
           <span className="resourceName">{resource.type}</span>
         </div>
       ))}
+    </div>
+    <div className="levelup">
+      <a>
+        <img src={Minus} alt="minus" />
+      </a>
+      <p>Level {props.level}</p>
+      <a>
+        <img src={Plus} alt="plus" />
+      </a>
     </div>
   </div>
 )

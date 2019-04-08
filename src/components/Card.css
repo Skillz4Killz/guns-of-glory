@@ -59,3 +59,15 @@
   text-align: center;
   color: #bc9060;
 }
+
+.levelup {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 248px;
+  height: 40.71px;
+  border-radius: 5px;
+  background: transparent;
+  border: 2px solid #bc9060;
+}
