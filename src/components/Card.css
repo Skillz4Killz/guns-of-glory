@@ -10,6 +10,7 @@
   font-size: 24px;
   text-align: center;
   color: #bc9060;
+  position: relative;
 }
 
 .cardImage {
@@ -20,12 +21,15 @@
   /* background: url(...); */
 }
 
-.cornerLevel {
+.badge {
   width: 26px;
   height: 26px;
   background: #bc9060;
   color: white;
   border-radius: 50%;
+  position: absolute;
+  right: 15px;
+  top: 16px;
 }
 
 .buildingName {

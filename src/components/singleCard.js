@@ -18,7 +18,7 @@ const Card = props => (
       alt={props.text}
       className="cardImage"
     />
-    <span className="cornerLevel">{props.level}</span>
+    <div className="badge">{props.level}</div>
     <h3 className="buildingName">{props.name}</h3>
     <p className="resourcesLeft">{props.text}</p>
     <div className="resources">
