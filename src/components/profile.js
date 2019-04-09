@@ -10,7 +10,7 @@ import player from "../utils/mockdb/skillz"
 
 const Profile = () => (
   <div>
-    <h1>Your profile</h1>
+    <h1>Your Profile Page</h1>
     <Tabs>
       <TabList>
         <Tab>Inner</Tab>
