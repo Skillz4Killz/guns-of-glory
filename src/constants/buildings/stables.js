@@ -1,5 +1,5 @@
 export default {
-  name: "Barracks",
+  name: "Stables",
   category: "inner",
   maxBuildingsAllowed: 1,
   level_1: {
@@ -9,7 +9,7 @@ export default {
     time: { value: "00:00:03", seconds: 3 },
     xp: 99,
     power: 144,
-    unlocks: ["Musketmen"],
+    unlocks: ["Mounted Musketmen"],
   },
   level_2: {
     level: 2,
@@ -36,7 +36,7 @@ export default {
     time: { value: "00:09:35", seconds: 575 },
     xp: 171,
     power: 1391,
-    unlocks: ["Pikemen"],
+    unlocks: ["Mounted Swordsmen"],
   },
   level_5: {
     level: 5,
@@ -63,7 +63,7 @@ export default {
     time: { value: "01:26:25", seconds: 5185 },
     xp: 511,
     power: 5016,
-    unlocks: ["Gunmen"],
+    unlocks: ["Armored Horsemen"],
   },
   level_8: {
     level: 8,
@@ -90,7 +90,7 @@ export default {
     time: { value: "04:02:06", seconds: 14526 },
     xp: 2094,
     power: 10953,
-    unlocks: ["Armored Pikemen"],
+    unlocks: ["Light Dragoons"],
   },
   level_11: {
     level: 11,
@@ -123,7 +123,7 @@ export default {
     time: { value: "07:26:16", seconds: 26776 },
     xp: 9999,
     power: 18091,
-    unlocks: ["Riflemen"],
+    unlocks: ["Cavaliers"],
   },
   level_14: {
     level: 14,
@@ -168,7 +168,7 @@ export default {
     time: { value: "13:47:43", seconds: 49663 },
     xp: 25589,
     power: 26531,
-    unlocks: ["Spearmen"],
+    unlocks: ["Chargers"],
   },
   level_17: {
     level: 17,
@@ -213,7 +213,7 @@ export default {
     time: { value: "1d 01:52:22", seconds: 93142 },
     xp: 44167,
     power: 36479,
-    unlocks: ["Frontline Gunners"],
+    unlocks: ["Heavy Dragoons"],
   },
   level_20: {
     level: 20,
@@ -258,7 +258,7 @@ export default {
     time: { value: "1d 20:45:38", seconds: 161138 },
     xp: 84806,
     power: 47410,
-    unlocks: ["Armored Spearmen"],
+    unlocks: ["Carabiniers"],
   },
   level_23: {
     level: 23,
@@ -318,7 +318,7 @@ export default {
     time: { value: "3d 19:13:36", seconds: 328416 },
     xp: 225275,
     power: 65528,
-    unlocks: ["Royal Gunners"],
+    unlocks: ["Royal Cavaliers"],
   },
   level_27: {
     level: 27,
@@ -378,7 +378,7 @@ export default {
     time: { value: "7d 20:55:10", seconds: 680110 },
     xp: 609456,
     power: 87683,
-    unlocks: ["War Masters"],
+    unlocks: ["Storm Riders"],
   },
   level_31: {
     level: 31,
@@ -444,7 +444,7 @@ export default {
     time: { value: "", seconds: 0 },
     xp: 0,
     power: 117853,
-    unlocks: ["Royal Duelists"],
+    unlocks: ["Winged Hussars"],
   },
   level_36: {
     level: 36,
@@ -489,6 +489,6 @@ export default {
     time: { value: "", seconds: 0 },
     xp: 0,
     power: 148023,
-    unlocks: ["Royal Rogues"],
+    unlocks: ["Charging Cossacks"],
   },
 }

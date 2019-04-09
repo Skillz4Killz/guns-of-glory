@@ -1,42 +1,42 @@
 export default {
-  name: "Barracks",
+  name: "Airship Dock",
   category: "inner",
   maxBuildingsAllowed: 1,
   level_1: {
     level: 1,
-    required: [{ name: "castle", level: "1" }],
+    required: [{ name: "castle", level: "5" }],
     resources: { food: 375, wood: 624, iron: 0, silver: 0, badges: 0 },
     time: { value: "00:00:03", seconds: 3 },
     xp: 99,
     power: 144,
-    unlocks: ["Musketmen"],
+    unlocks: ["Minion Cannons"],
   },
   level_2: {
     level: 2,
-    required: [{ name: "castle", level: "2" }],
+    required: [{ name: "castle", level: "5" }],
     resources: { food: 525, wood: 874, iron: 0, silver: 0, badges: 0 },
     time: { value: "00:01:07", seconds: 67 },
     xp: 111,
     power: 288,
-    unlocks: [],
+    unlocks: [""],
   },
   level_3: {
     level: 3,
-    required: [{ name: "castle", level: "3" }],
+    required: [{ name: "castle", level: "5" }],
     resources: { food: 787, wood: 1000, iron: 0, silver: 0, badges: 0 },
     time: { value: "00:02:23", seconds: 143 },
     xp: 134,
     power: 706,
-    unlocks: [],
+    unlocks: [""],
   },
   level_4: {
     level: 4,
-    required: [{ name: "castle", level: "4" }],
+    required: [{ name: "castle", level: "5" }],
     resources: { food: 1000, wood: 2000, iron: 0, silver: 0, badges: 0 },
     time: { value: "00:09:35", seconds: 575 },
     xp: 171,
     power: 1391,
-    unlocks: ["Pikemen"],
+    unlocks: ["Light Mortars"],
   },
   level_5: {
     level: 5,
@@ -45,7 +45,7 @@ export default {
     time: { value: "00:19:12", seconds: 1152 },
     xp: 233,
     power: 2340,
-    unlocks: [],
+    unlocks: [""],
   },
   level_6: {
     level: 6,
@@ -54,7 +54,7 @@ export default {
     time: { value: "00:38:23", seconds: 2303 },
     xp: 336,
     power: 3548,
-    unlocks: [],
+    unlocks: [""],
   },
   level_7: {
     level: 7,
@@ -63,7 +63,7 @@ export default {
     time: { value: "01:26:25", seconds: 5185 },
     xp: 511,
     power: 5016,
-    unlocks: ["Gunmen"],
+    unlocks: ["Falconets"],
   },
   level_8: {
     level: 8,
@@ -72,7 +72,7 @@ export default {
     time: { value: "02:18:29", seconds: 8309 },
     xp: 818,
     power: 6740,
-    unlocks: [],
+    unlocks: [""],
   },
   level_9: {
     level: 9,
@@ -81,7 +81,7 @@ export default {
     time: { value: "03:13:37", seconds: 11617 },
     xp: 1308,
     power: 8719,
-    unlocks: [],
+    unlocks: [""],
   },
   level_10: {
     level: 10,
@@ -90,7 +90,7 @@ export default {
     time: { value: "04:02:06", seconds: 14526 },
     xp: 2094,
     power: 10953,
-    unlocks: ["Armored Pikemen"],
+    unlocks: ["Bombards"],
   },
   level_11: {
     level: 11,
@@ -99,7 +99,7 @@ export default {
     time: { value: "04:56:57", seconds: 17817 },
     xp: 3754,
     power: 13188,
-    unlocks: [],
+    unlocks: [""],
   },
   level_12: {
     level: 12,
@@ -108,7 +108,7 @@ export default {
     time: { value: "06:04:24", seconds: 21864 },
     xp: 6330,
     power: 15572,
-    unlocks: [],
+    unlocks: [""],
   },
   level_13: {
     level: 13,
@@ -123,7 +123,7 @@ export default {
     time: { value: "07:26:16", seconds: 26776 },
     xp: 9999,
     power: 18091,
-    unlocks: ["Riflemen"],
+    unlocks: ["Sakers"],
   },
   level_14: {
     level: 14,
@@ -138,7 +138,7 @@ export default {
     time: { value: "09:06:28", seconds: 32788 },
     xp: 14730,
     power: 20730,
-    unlocks: [],
+    unlocks: [""],
   },
   level_15: {
     level: 15,
@@ -153,7 +153,7 @@ export default {
     time: { value: "11:09:14", seconds: 40154 },
     xp: 20133,
     power: 23474,
-    unlocks: [],
+    unlocks: [""],
   },
   level_16: {
     level: 16,
@@ -168,7 +168,7 @@ export default {
     time: { value: "13:47:43", seconds: 49663 },
     xp: 25589,
     power: 26531,
-    unlocks: ["Spearmen"],
+    unlocks: ["Heavy Mortars"],
   },
   level_17: {
     level: 17,
@@ -183,7 +183,7 @@ export default {
     time: { value: "17:01:34", seconds: 61294 },
     xp: 30700,
     power: 29723,
-    unlocks: [],
+    unlocks: [""],
   },
   level_18: {
     level: 18,
@@ -198,7 +198,7 @@ export default {
     time: { value: "20:58:29", seconds: 75509 },
     xp: 36826,
     power: 33042,
-    unlocks: [],
+    unlocks: [""],
   },
   level_19: {
     level: 19,
@@ -213,7 +213,7 @@ export default {
     time: { value: "1d 01:52:22", seconds: 93142 },
     xp: 44167,
     power: 36479,
-    unlocks: ["Frontline Gunners"],
+    unlocks: ["Culverins"],
   },
   level_20: {
     level: 20,
@@ -228,7 +228,7 @@ export default {
     time: { value: "1d 07:55:51", seconds: 114951 },
     xp: 52962,
     power: 40025,
-    unlocks: [],
+    unlocks: [""],
   },
   level_21: {
     level: 21,
@@ -243,7 +243,7 @@ export default {
     time: { value: "1d 13:48:57", seconds: 136137 },
     xp: 67024,
     power: 43672,
-    unlocks: [],
+    unlocks: [""],
   },
   level_22: {
     level: 22,
@@ -258,7 +258,7 @@ export default {
     time: { value: "1d 20:45:38", seconds: 161138 },
     xp: 84806,
     power: 47410,
-    unlocks: ["Armored Spearmen"],
+    unlocks: ["Double Destroyers"],
   },
   level_23: {
     level: 23,
@@ -273,7 +273,7 @@ export default {
     time: { value: "2d 05:28:15", seconds: 192495 },
     xp: 108271,
     power: 51702,
-    unlocks: [],
+    unlocks: [""],
   },
   level_24: {
     level: 24,
@@ -288,7 +288,7 @@ export default {
     time: { value: "2d 15:51:44", seconds: 229904 },
     xp: 138225,
     power: 56155,
-    unlocks: [],
+    unlocks: [""],
   },
   level_25: {
     level: 25,
@@ -303,7 +303,7 @@ export default {
     time: { value: "3d 04:23:57", seconds: 275037 },
     xp: 176463,
     power: 60764,
-    unlocks: [],
+    unlocks: [""],
   },
   level_26: {
     level: 26,
@@ -318,7 +318,7 @@ export default {
     time: { value: "3d 19:13:36", seconds: 328416 },
     xp: 225275,
     power: 65528,
-    unlocks: ["Royal Gunners"],
+    unlocks: ["Death Launchers"],
   },
   level_27: {
     level: 27,
@@ -333,7 +333,7 @@ export default {
     time: { value: "4d 13:26:52", seconds: 394012 },
     xp: 288915,
     power: 70770,
-    unlocks: [],
+    unlocks: [""],
   },
   level_28: {
     level: 28,
@@ -348,7 +348,7 @@ export default {
     time: { value: "5d 11:15:17", seconds: 472517 },
     xp: 370533,
     power: 76210,
-    unlocks: [],
+    unlocks: [""],
   },
   level_29: {
     level: 29,
@@ -363,7 +363,7 @@ export default {
     time: { value: "6d 13:26:50", seconds: 566810 },
     xp: 475209,
     power: 81848,
-    unlocks: [],
+    unlocks: [""],
   },
   level_30: {
     level: 30,
@@ -378,7 +378,7 @@ export default {
     time: { value: "7d 20:55:10", seconds: 680110 },
     xp: 609456,
     power: 87683,
-    unlocks: ["War Masters"],
+    unlocks: ["Supercannons"],
   },
   level_31: {
     level: 31,
@@ -394,7 +394,7 @@ export default {
     time: { value: "9d 10:43:37", seconds: 816217 },
     xp: 781627,
     power: 93717,
-    unlocks: [],
+    unlocks: [""],
   },
   level_32: {
     level: 32,
@@ -410,7 +410,7 @@ export default {
     time: { value: "11d 00:32:02", seconds: 952322 },
     xp: 953798,
     power: 99751,
-    unlocks: [],
+    unlocks: [""],
   },
   level_33: {
     level: 33,
@@ -426,7 +426,7 @@ export default {
     time: { value: "12d 14:20:28", seconds: 1088428 },
     xp: null,
     power: 105785,
-    unlocks: [],
+    unlocks: [""],
   },
   level_34: {
     level: 34,
@@ -435,7 +435,7 @@ export default {
     time: { value: "", seconds: 0 },
     xp: 0,
     power: 111819,
-    unlocks: [],
+    unlocks: [""],
   },
   level_35: {
     level: 35,
@@ -444,7 +444,7 @@ export default {
     time: { value: "", seconds: 0 },
     xp: 0,
     power: 117853,
-    unlocks: ["Royal Duelists"],
+    unlocks: ["Master Mortars"],
   },
   level_36: {
     level: 36,
@@ -453,7 +453,7 @@ export default {
     time: { value: "", seconds: 0 },
     xp: 0,
     power: 123887,
-    unlocks: [],
+    unlocks: [""],
   },
   level_37: {
     level: 37,
@@ -462,7 +462,7 @@ export default {
     time: { value: "", seconds: 0 },
     xp: 0,
     power: 129921,
-    unlocks: [],
+    unlocks: [""],
   },
   level_38: {
     level: 38,
@@ -471,7 +471,7 @@ export default {
     time: { value: "", seconds: 0 },
     xp: 0,
     power: 135955,
-    unlocks: [],
+    unlocks: [""],
   },
   level_39: {
     level: 39,
@@ -480,7 +480,7 @@ export default {
     time: { value: "", seconds: 0 },
     xp: 0,
     power: 141989,
-    unlocks: [],
+    unlocks: [""],
   },
   level_40: {
     level: 40,
@@ -489,6 +489,6 @@ export default {
     time: { value: "", seconds: 0 },
     xp: 0,
     power: 148023,
-    unlocks: ["Royal Rogues"],
+    unlocks: ["Wall Smashers"],
   },
 }

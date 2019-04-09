@@ -31,7 +31,7 @@ const Layout = ({ children }) => (
         </div>
         <footer
           className="footer"
-          bottomThreshold={50}
+          bottomthreshold={50}
           style={{
             backgroundColor: "#050E19",
             padding: "1rem",

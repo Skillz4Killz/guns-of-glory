@@ -1,66 +1,108 @@
-/* eslint react/no-multi-comp: 0, max-len: 0 */
-import "rc-slider/assets/index.css"
-
 import React from "react"
-import Slider, { createSliderWithTooltip } from "rc-slider"
+import "./tracker.css"
 
 import SingleCard from "./singleCard"
+import AcademyImage from "../images/academy.png"
+import BuildingConstants from "../constants/buildings/index"
+const resourceTypes = ["food", "wood", "iron", "silver", "badges"]
 
-const levelFormatter = v => `Level ${v}`
+const imageAssets = {
+  academy: AcademyImage,
+  airshipdock: AcademyImage,
+  artilleryfoundry: AcademyImage,
+  barracks: AcademyImage,
+  castle: AcademyImage,
+  embassy: AcademyImage,
+  farm: AcademyImage,
+  forge: AcademyImage,
+  hallofwar: AcademyImage,
+  hospital: AcademyImage,
+  ironmine: AcademyImage,
+  lookouttower: AcademyImage,
+  lumberyard: AcademyImage,
+  militarytent: AcademyImage,
+  munitionsexchange: AcademyImage,
+  shootingrange: AcademyImage,
+  silvermine: AcademyImage,
+  stables: AcademyImage,
+  tradestation: AcademyImage,
+  trapfactory: AcademyImage,
+  wall: AcademyImage,
+  warehouse: AcademyImage,
+}
 
-const SliderWithTooltip = createSliderWithTooltip(Slider)
-// const resourceTypes = ["food", "wood", "iron", "silver", "badges"]
+export default props => {
+  const buildings = Object.values(props.player.buildings)
+  const castleBuilding = buildings.find(b => b.name.toLowerCase() === "castle")
+  const currentCastleLevel = castleBuilding.levels[0]
+  return (
+    <div className="cardGrid">
+      {buildings.map((building, index) => {
+        const buildingName = building.name
+          .split(" ")
+          .join("")
+          .toLowerCase()
+        const buildingDetails = BuildingConstants[buildingName]
 
-export default class CustomizedSlider extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      value: 18,
-    }
-  }
-  onSliderChange = value => {
-    this.setState({
-      value,
-    })
-  }
+        const buildingLevels = Object.keys(buildingDetails).filter(l =>
+          l.startsWith("level_")
+        )
 
-  makeAllNecessarySliders = levelKeys => {
-    const sliders = []
-    for (let i = 0; i < this.props.building.maxBuildingsAllowed; i++) {
-      sliders.push(
-        <SliderWithTooltip
-          value={this.state.value}
-          onChange={this.onSliderChange}
-          dots
-          max={levelKeys.length}
-          tipFormatter={levelFormatter}
-        />
-      )
-    }
-    return sliders
-  }
+        const allowedLevels = buildingLevels.filter(l => {
+          if (buildingDetails[l].level < building.levels[0]) return false
+          const requirements = buildingDetails[l].required
+          for (const requirement of requirements) {
+            const currentRequiredBuildingLevel = buildings.find(
+              b => b.name.toLowerCase() === requirement.name.toLowerCase()
+            ).levels[0]
+            if (currentRequiredBuildingLevel < requirement.level) return false
+          }
+          return true
+        })
+        // console.log(buildingName, allowedLevels)
+        const neededResource = resourceTypes
+          .map(type =>
+            allowedLevels.length
+              ? allowedLevels
+                  .map(
+                    key =>
+                      buildingDetails[key].resources[type] *
+                      building.levels.length
+                  )
+                  .reduce((prev, current) => prev + current)
+              : 0
+          )
+          .map(value => {
+            if (value > 1000000) return `${(value / 1000000).toFixed(2)}M`
+            if (value > 1000) return `${(value / 1000).toFixed(2)}K`
+            return value
+          })
 
-  render() {
-    const levelKeys = Object.keys(this.props.building).filter(l =>
-      l.startsWith("level_")
-    )
+        return allowedLevels[allowedLevels.length - 1] ? (
+          <SingleCard
+            key={index}
+            image={imageAssets[buildingName]}
+            name={building.name}
+            text={
+              allowedLevels[allowedLevels.length - 1]
+                ? `Resources left to lvl ${allowedLevels[
+                    allowedLevels.length - 1
+                  ].substring(6)}`
+                : "Maxed Out Building"
+            }
+            resources={[
+              { type: "Food", amount: neededResource[0] },
+              { type: "Wood", amount: neededResource[1] },
+              { type: "Iron", amount: neededResource[2] },
+              { type: "Silver", amount: neededResource[3] },
+            ]}
+            level={building.levels[0]}
+            maxLevel={buildingLevels.length}
+          />
+        ) : null
+      })}
 
-    return (
-      <div>
-        <SingleCard
-          image="https://cdn.discordapp.com/attachments/416884846611398667/562757696076382218/farm.jpg"
-          name="Academy"
-          text={`Resources left to lvl ${levelKeys.length}`}
-          resources={[
-            { type: "Food", amount: "5K" },
-            { type: "Wood", amount: "110K" },
-            { type: "Iron", amount: "90M" },
-            { type: "Silver", amount: "10M" },
-          ]}
-          level={1}
-          maxLevel={40}
-        />
-        {/*<img
+      {/*<img
           src="https://cdn.discordapp.com/attachments/416884846611398667/562757696076382218/farm.jpg"
           alt={this.props.building.name}
         />
@@ -91,7 +133,6 @@ export default class CustomizedSlider extends React.Component {
             tipFormatter={levelFormatter}
           />
         )}*/}
-      </div>
-    )
-  }
+    </div>
+  )
 }
