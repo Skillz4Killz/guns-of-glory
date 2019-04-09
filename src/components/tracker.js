@@ -33,11 +33,20 @@ const imageAssets = {
 
 export default props => {
   const buildings = Object.values(props.player.buildings)
-  const castleBuilding = buildings.find(b => b.name.toLowerCase() === "castle")
-  const currentCastleLevel = castleBuilding.levels[0]
+  const categoryBuildings = Object.values(props.player.buildings).filter(b => {
+    return (
+      BuildingConstants[
+        b.name
+          .split(" ")
+          .join("")
+          .toLowerCase()
+      ].category.toLowerCase() === props.category
+    )
+  })
+
   return (
     <div className="cardGrid">
-      {buildings.map((building, index) => {
+      {categoryBuildings.map((building, index) => {
         const buildingName = building.name
           .split(" ")
           .join("")
@@ -59,7 +68,7 @@ export default props => {
           }
           return true
         })
-        // console.log(buildingName, allowedLevels)
+
         const neededResource = resourceTypes
           .map(type =>
             allowedLevels.length
@@ -101,38 +110,6 @@ export default props => {
           />
         ) : null
       })}
-
-      {/*<img
-          src="https://cdn.discordapp.com/attachments/416884846611398667/562757696076382218/farm.jpg"
-          alt={this.props.building.name}
-        />
-        <h3>{this.props.building.name}</h3>
-        {resourceTypes.map((type, index) => {
-          const neededResource = levelKeys
-            .slice(this.state.value)
-            .map(
-              key =>
-                this.props.building[key].resources[type] *
-                this.props.building.maxBuildingsAllowed
-            )
-            .reduce((prev, current) => prev + current)
-          return neededResource ? (
-            <p key={index}>
-              {type}: {neededResource.toLocaleString()}
-            </p>
-          ) : null
-        })}
-        {this.props.building.maxBuildingsAllowed > 1 ? (
-          this.makeAllNecessarySliders(levelKeys)
-        ) : (
-          <SliderWithTooltip
-            value={this.state.value}
-            onChange={this.onSliderChange}
-            dots
-            max={levelKeys.length}
-            tipFormatter={levelFormatter}
-          />
-        )}*/}
     </div>
   )
 }

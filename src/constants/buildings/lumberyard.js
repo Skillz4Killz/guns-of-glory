@@ -1,6 +1,6 @@
 export default {
   name: "Lumberyard",
-  category: "inner",
+  category: "outer",
   maxBuildingsAllowed: 8,
   level_1: {
     level: 1,

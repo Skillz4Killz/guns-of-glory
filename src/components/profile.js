@@ -1,4 +1,8 @@
 import React from "react"
+
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs"
+import "react-tabs/style/react-tabs.css"
+
 import Tracker from "../components/tracker"
 
 import player from "../utils/mockdb/skillz"
@@ -7,12 +11,26 @@ import player from "../utils/mockdb/skillz"
 const Profile = () => (
   <div>
     <h1>Your profile</h1>
-    <ul>
-      <li>Name: </li>
-      <li>E-mail:</li>
-    </ul>
-
-    <Tracker player={player} />
+    <Tabs>
+      <TabList>
+        <Tab>Inner</Tab>
+        <Tab>Outer</Tab>
+        <Tab>Army</Tab>
+        <Tab>Guards</Tab>
+      </TabList>
+      <TabPanel>
+        <Tracker player={player} category="inner" />
+      </TabPanel>
+      <TabPanel>
+        <Tracker player={player} category="outer" />
+      </TabPanel>
+      <TabPanel>
+        <p>Placeholder for player troops</p>
+      </TabPanel>
+      <TabPanel>
+        <p>Placeholder for player guards</p>
+      </TabPanel>
+    </Tabs>
   </div>
 )
 

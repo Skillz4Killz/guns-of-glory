@@ -1,6 +1,6 @@
 export default {
   name: "Military Tent",
-  category: "inner",
+  category: "outer",
   maxBuildingsAllowed: 8,
   level_1: {
     level: 1,

@@ -1,0 +1,8 @@
+.navDiv {
+  display: flex;
+}
+
+.rightSideNav {
+  color: white;
+  text-decoration: none;
+}

@@ -41,7 +41,7 @@ const Layout = ({ children }) => (
             textAlign: "center",
             bottom: "0px",
             width: "100%",
-            marginTop: "15  px",
+            marginTop: "15px",
           }}
         >
           <p>© {new Date().getFullYear()}, Copyright GoGHub</p>
