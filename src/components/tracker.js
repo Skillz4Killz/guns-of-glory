@@ -4,28 +4,36 @@ import "./tracker.css"
 import SingleCard from "./singleCard"
 import AcademyImage from "../images/academy.png"
 import WarehouseImage from "../images/warehouse.png"
+import ForgeImage from "../images/forge.png"
+import MunitionsExchangeImage from "../images/munitionsexchange.png"
+import EmbassyImage from "../images/embassy.png"
+import HallOfWarImage from "../images/hallofwar.png"
+import ArtilleryFoundryImage from "../images/artilleryfoundry.png"
+import StablesImage from "../images/stables.png"
+import ShootingRangeImage from "../images/shootingrange.png"
+
 import BuildingConstants from "../constants/buildings/index"
 const resourceTypes = ["food", "wood", "iron", "silver", "badges"]
 
 const imageAssets = {
   academy: AcademyImage,
   airshipdock: AcademyImage,
-  artilleryfoundry: AcademyImage,
+  artilleryfoundry: ArtilleryFoundryImage,
   barracks: AcademyImage,
   castle: AcademyImage,
-  embassy: AcademyImage,
+  embassy: EmbassyImage,
   farm: AcademyImage,
-  forge: AcademyImage,
-  hallofwar: AcademyImage,
+  forge: ForgeImage,
+  hallofwar: HallOfWarImage,
   hospital: AcademyImage,
   ironmine: AcademyImage,
   lookouttower: AcademyImage,
   lumberyard: AcademyImage,
   militarytent: AcademyImage,
-  munitionsexchange: AcademyImage,
-  shootingrange: AcademyImage,
+  munitionsexchange: MunitionsExchangeImage,
+  shootingrange: ShootingRangeImage,
   silvermine: AcademyImage,
-  stables: AcademyImage,
+  stables: StablesImage,
   tradestation: AcademyImage,
   trapfactory: AcademyImage,
   wall: AcademyImage,
