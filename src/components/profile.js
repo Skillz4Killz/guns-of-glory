@@ -8,30 +8,32 @@ import Tracker from "../components/tracker"
 import player from "../utils/mockdb/skillz"
 // import player from "../utils/mockdb/ac1";
 
-const Profile = () => (
-  <div>
-    <h1>Your Profile Page</h1>
-    <Tabs>
-      <TabList>
-        <Tab>Inner</Tab>
-        <Tab>Outer</Tab>
-        <Tab>Army</Tab>
-        <Tab>Guards</Tab>
-      </TabList>
-      <TabPanel>
-        <Tracker player={player} category="inner" />
-      </TabPanel>
-      <TabPanel>
-        <Tracker player={player} category="outer" />
-      </TabPanel>
-      <TabPanel>
-        <p>Placeholder for player troops</p>
-      </TabPanel>
-      <TabPanel>
-        <p>Placeholder for player guards</p>
-      </TabPanel>
-    </Tabs>
-  </div>
-)
+const Profile = () => {
+  return (
+    <div>
+      <h1>Your Profile Page</h1>
+      <Tabs>
+        <TabList>
+          <Tab>Inner</Tab>
+          <Tab>Outer</Tab>
+          <Tab>Army</Tab>
+          <Tab>Guards</Tab>
+        </TabList>
+        <TabPanel>
+          <Tracker player={player} category="inner" />
+        </TabPanel>
+        <TabPanel>
+          <Tracker player={player} category="outer" />
+        </TabPanel>
+        <TabPanel>
+          <p>Placeholder for player troops</p>
+        </TabPanel>
+        <TabPanel>
+          <p>Placeholder for player guards</p>
+        </TabPanel>
+      </Tabs>
+    </div>
+  )
+}
 
 export default Profile

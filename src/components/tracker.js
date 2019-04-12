@@ -3,6 +3,7 @@ import "./tracker.css"
 
 import SingleCard from "./singleCard"
 import AcademyImage from "../images/academy.png"
+import WarehouseImage from "../images/warehouse.png"
 import BuildingConstants from "../constants/buildings/index"
 const resourceTypes = ["food", "wood", "iron", "silver", "badges"]
 
@@ -28,7 +29,7 @@ const imageAssets = {
   tradestation: AcademyImage,
   trapfactory: AcademyImage,
   wall: AcademyImage,
-  warehouse: AcademyImage,
+  warehouse: WarehouseImage,
 }
 
 export default props => {
@@ -73,12 +74,12 @@ export default props => {
           .map(type =>
             allowedLevels.length
               ? allowedLevels
-                  .map(
-                    key =>
-                      buildingDetails[key].resources[type] *
-                      building.levels.length
-                  )
-                  .reduce((prev, current) => prev + current)
+                .map(
+                  key =>
+                    buildingDetails[key].resources[type] *
+                    building.levels.length
+                )
+                .reduce((prev, current) => prev + current)
               : 0
           )
           .map(value => {
@@ -95,8 +96,8 @@ export default props => {
             text={
               allowedLevels[allowedLevels.length - 1]
                 ? `Resources left to lvl ${allowedLevels[
-                    allowedLevels.length - 1
-                  ].substring(6)}`
+                  allowedLevels.length - 1
+                ].substring(6)}`
                 : "Maxed Out Building"
             }
             resources={[
