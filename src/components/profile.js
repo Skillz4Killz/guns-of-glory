@@ -6,12 +6,13 @@ import "react-tabs/style/react-tabs.css"
 import Tracker from "../components/tracker"
 
 import player from "../utils/mockdb/skillz"
+import './Navbar.css'
 // import player from "../utils/mockdb/ac1";
 
 const Profile = () => {
   return (
     <div>
-      <h1>Your Profile Page</h1>
+      <h1 style={{ color: 'white', fontSize: '24px', width: '1300px', maxWidth: '1300px', margin: '0 auto', marginBottom: '16px', marginTop: '16px'}}>Your Profile Page</h1>
       <Tabs>
         <TabList>
           <Tab>Inner</Tab>

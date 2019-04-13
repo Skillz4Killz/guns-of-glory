@@ -2,9 +2,6 @@ import React from "react"
 import "./Card.css"
 // import { Link } from "gatsby"
 
-import Minus from "../images/minus.png"
-import Plus from "../images/plus.png"
-
 const Card = props => (
   <div className="card">
     <img src={props.image} alt={props.text} className="cardImage" />
@@ -22,13 +19,9 @@ const Card = props => (
       })}
     </div>
     <div className="levelup">
-      <a href="https://google.com">
-        <img src={Minus} alt="minus" className="levelupButton" />
-      </a>
+      <h1 className="minus">-</h1>
       <p className="levelupText">Level {props.level}</p>
-      <a href="https://google.com">
-        <img src={Plus} alt="plus" className="levelupButton" />
-      </a>
+      <h1 className="plus">+</h1>
     </div>
   </div>
 )

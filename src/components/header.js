@@ -1,7 +1,6 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import TextLogo from "../images/gunsofglory.png"
 import { logout, getProfile } from "../services/auth"
 import "./header.css"
 
@@ -11,10 +10,10 @@ const Header = ({ siteTitle }) => {
   return (
     <header className="header">
       <div className="navDiv">
-        <img src={TextLogo} alt="game logo" className="gameLogo" />
+        <h1 className='gameLogo'>GoGHub</h1>
         <div className="rightSideNav">
           {user ? (
-            <Link to="/profile" className="rightSideNav">
+            <Link to="/profile" className="rightSideNav" style={{ fontSize: '12px', marginRight:'16px'}}>
               {user.name}
             </Link>
           ) : null}{" "}
@@ -22,6 +21,9 @@ const Header = ({ siteTitle }) => {
             <a
               className="rightSideNav"
               href="#logout"
+              style={{
+                fontSize: '12px', marginRight: '16px'
+              }}
               onClick={e => {
                 logout()
                 e.preventDefault()

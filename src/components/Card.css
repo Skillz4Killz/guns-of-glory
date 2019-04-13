@@ -1,16 +1,18 @@
 .card {
-  width: 280px;
+  width: 320px;
   height: 390px;
-  border-radius: 10px;
+  border-radius: 20px;
   background: #102840;
   border: 3px solid #bc9060;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
-  font-family: "Times New Roman";
+  font-family: "Roboto";
   font-weight: bold;
   font-size: 24px;
   text-align: center;
   color: #bc9060;
   position: relative;
+  margin-left: 16px;
+  margin-top: 40px;
 }
 
 .cardImage {
@@ -26,7 +28,7 @@
   height: 26px;
   background: #bc9060;
   color: white;
-  font-size: 18px;
+  font-size: 14px;
   border-radius: 50%;
   position: absolute;
   right: 16px;
@@ -34,7 +36,7 @@
 }
 
 .buildingName {
-  font-family: "Times New Roman";
+  font-family: "Roboto";
   font-weight: bold;
   font-size: 24px;
   text-align: center;
@@ -47,8 +49,8 @@
   box-sizing: border-box;
   justify-content: space-around;
   flex-wrap: wrap;
-  font-family: "Times New Roman";
-  font-size: 16px;
+  font-family: "Roboto";
+  font-size: 14px;
   text-align: left;
   color: #bc9060;
   margin-top: -5px;
@@ -70,8 +72,7 @@
 
 .levelup {
   display: flex;
-  box-sizing: border-box;
-  justify-content: space-around;
+  flex-direction: column;
   flex-wrap: wrap;
   width: 248px;
   height: 40px;
@@ -82,13 +83,33 @@
   text-transform: uppercase;
   font-size: 18px;
   margin-top: 40px;
+  transition-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
 }
 
-.levelupText {
-  margin-top: 8px;
+.levelup:hover {
+background: #bc9060;
+color: white;
 }
 
-.levelupButton {
-  margin-top: 8px;
-  cursor: pointer;
+.levelupText{
+  margin-top: 5px;
+font-size: 16px;
+}
+
+.minus {
+  font-size: 18px;
+  margin-top: 6px;
+}
+
+.plus {
+  font-size: 18px;
+  margin-top: 6px;
+}
+
+.cardGrid {
+  max-width: 1366px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
 }
