@@ -13,7 +13,7 @@ const Card = props => (
         return resource.amount ? (
           <div key={index}>
             <p className="resources">{resource.amount}</p>
-            <span className="resourceName">{resource.type}</span>
+            <img className="resourceName" src={resource.image} />
           </div>
         ) : null
       })}

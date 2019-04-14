@@ -19,6 +19,12 @@ import LookoutTower from "../images/lookouttower.png"
 import LumberyardImage from "../images/lumberyard.png"
 import TradeStationImage from "../images/tradestation.png"
 import WallImage from "../images/wall.png"
+import CastleImage from "../images/castle.png"
+import FoodImage from "../images/food.png"
+import IronImage from "../images/iron.png"
+import MilitaryTentImage from "../images/militarytent.png"
+import SilverImage from "../images/silver.png"
+import WoodImage from "../images/wood.png"
 
 import BuildingConstants from "../constants/buildings/index"
 const resourceTypes = ["food", "wood", "iron", "silver", "badges"]
@@ -28,7 +34,7 @@ const imageAssets = {
   airshipdock: AirshipDockImage,
   artilleryfoundry: ArtilleryFoundryImage,
   barracks: BarracksImage,
-  castle: AcademyImage,
+  castle: CastleImage,
   embassy: EmbassyImage,
   farm: FarmImage,
   forge: ForgeImage,
@@ -37,7 +43,7 @@ const imageAssets = {
   ironmine: AcademyImage,
   lookouttower: LookoutTower,
   lumberyard: LumberyardImage,
-  militarytent: AcademyImage,
+  militarytent: MilitaryTentImage,
   munitionsexchange: MunitionsExchangeImage,
   shootingrange: ShootingRangeImage,
   silvermine: AcademyImage,
@@ -46,6 +52,10 @@ const imageAssets = {
   trapfactory: AcademyImage,
   wall: WallImage,
   warehouse: WarehouseImage,
+  food: FoodImage,
+  wood: WoodImage,
+  iron: IronImage,
+  silver: SilverImage
 }
 
 export default props => {
@@ -117,10 +127,10 @@ export default props => {
                 : "Maxed Out Building"
             }
             resources={[
-              { type: "Food", amount: neededResource[0] },
-              { type: "Wood", amount: neededResource[1] },
-              { type: "Iron", amount: neededResource[2] },
-              { type: "Silver", amount: neededResource[3] },
+              { type: "Food", image: FoodImage, amount: neededResource[0] },
+              { type: "Wood", image: WoodImage, amount: neededResource[1] },
+              { type: "Iron", image: IronImage, amount: neededResource[2] },
+              { type: "Silver", image: SilverImage, amount: neededResource[3] },
             ]}
             level={building.levels[0]}
             maxLevel={buildingLevels.length}
