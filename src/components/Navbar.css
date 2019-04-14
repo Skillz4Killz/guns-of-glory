@@ -4,7 +4,8 @@
 
 .react-tabs__tab-list {
   width: 1300px;
-  max-width: 90%;
+  max-width: 100%;
+  margin-left: 16px;
   margin: 0 auto;
   border-bottom: none;
 }
@@ -17,7 +18,9 @@
   padding: 6px 12px;
   cursor: pointer;
   margin-bottom: 16px;
-  color: rgba(255, 255, 255, 0.616);
+  color: rgba(255, 255, 255, 0.384);
+  font-family: "Roboto";
+  font-weight: 800;
 }
 
 .react-tabs__tab--selected {
