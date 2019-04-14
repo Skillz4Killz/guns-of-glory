@@ -62,8 +62,12 @@
 .resourceName {
   font-size: 12px;
   color: #6f879f;
-  height: 30px;
-  width: 30px;
+}
+
+.resourceIcon {
+  height: 20px;
+  width: 20px;
+  margin-left: 5px;
 }
 
 .resourcesLeft {
@@ -103,22 +107,24 @@
 }
 
 .levelupIconDiv {
-  height: 20px;
-  width: 20px;
+  height: 30px;
+  width: 30px;
   margin-left: 25px;
   cursor: pointer;
   border-radius: 20px;
   vertical-align: middle;
   justify-content: center;
-  margin-top: 7px;
+  margin-top: 2px;
 }
 
 .minus {
   font-size: 18px;
+  margin-top: 5px;
 }
 
 .plus {
   font-size: 18px;
+  margin-top: 5px;
 }
 
 .cardGrid {
