@@ -638,3 +638,17 @@ pre tt:after {
     font-size: 100%;
   }
 }
+.banner{
+  background: linear-gradient(
+        to top,
+        #08192b 1%,
+        #08192b 30%,
+        rgba(25, 26, 27, 0) 100%
+      ),
+      url('../images/guns-of-glory_banner.jpg') no-repeat center top;
+      height: 800px;
+      width: 100%;
+      position: absolute;
+      margin-top: -32px;
+      background-size: cover
+  }

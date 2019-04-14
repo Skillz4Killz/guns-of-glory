@@ -12,7 +12,8 @@ import './Navbar.css'
 const Profile = () => {
   return (
     <div>
-      <h1 style={{ color: 'white', fontSize: '24px', width: '1300px', maxWidth: '1300px', margin: '0 auto', marginBottom: '16px', marginTop: '16px'}}>Your Profile Page</h1>
+      <div className='banner'></div>
+      <h1 style={{ color: 'white', fontSize: '24px', position: 'relative', marginTop:'32px', textAlign:'center'}}>Your Profile Page</h1>
       <Tabs>
         <TabList>
           <Tab>Inner</Tab>
