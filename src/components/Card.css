@@ -92,13 +92,21 @@
 }
 
 .levelup:hover {
-background: #bc9060;
-color: white;
+  background: #bc9060;
+  color: white;
 }
 
-.levelupText{
+.levelupText {
   margin-top: 5px;
-font-size: 16px;
+  font-size: 16px;
+}
+
+.levelupIconDiv {
+  height: 20px;
+  width: 20px;
+  margin-left: 20px;
+  cursor: pointer;
+  background: red;
 }
 
 .minus {
