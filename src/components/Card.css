@@ -1,7 +1,7 @@
 .card {
   width: 320px;
   height: 390px;
-  border-radius: 20px;
+  border-radius: 26px;
   background: #102840;
   border: 3px solid #bc9060;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
@@ -55,13 +55,14 @@
   text-align: left;
   color: #bc9060;
   margin-top: -5px;
-  margin-bottom: -5px;
+  margin-bottom: 0px;
   text-align: center;
 }
 
 .resourceName {
   font-size: 12px;
   color: #6f879f;
+  margin-bottom: 0px
 }
 
 .resourceIcon {
@@ -86,13 +87,13 @@
   flex-wrap: wrap;
   width: 248px;
   height: 40px;
-  border-radius: 5px;
+  border-radius: 12px;
   background: transparent;
   border: 2px solid #bc9060;
   margin: auto;
   text-transform: uppercase;
   font-size: 18px;
-  transition-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
+      margin-top: 24px;
 }
 
 .levelupIconDiv:hover {
