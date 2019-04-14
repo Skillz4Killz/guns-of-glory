@@ -11,32 +11,40 @@ import HallOfWarImage from "../images/hallofwar.png"
 import ArtilleryFoundryImage from "../images/artilleryfoundry.png"
 import StablesImage from "../images/stables.png"
 import ShootingRangeImage from "../images/shootingrange.png"
+import AirshipDockImage from "../images/airshipdock.png"
+import BarracksImage from "../images/barracks.png"
+import FarmImage from "../images/farm.png"
+import HospitalImage from "../images/hospital.png"
+import LookoutTower from "../images/lookouttower.png"
+import LumberyardImage from "../images/lumberyard.png"
+import TradeStationImage from "../images/tradestation.png"
+import WallImage from "../images/wall.png"
 
 import BuildingConstants from "../constants/buildings/index"
 const resourceTypes = ["food", "wood", "iron", "silver", "badges"]
 
 const imageAssets = {
   academy: AcademyImage,
-  airshipdock: AcademyImage,
+  airshipdock: AirshipDockImage,
   artilleryfoundry: ArtilleryFoundryImage,
-  barracks: AcademyImage,
+  barracks: BarracksImage,
   castle: AcademyImage,
   embassy: EmbassyImage,
-  farm: AcademyImage,
+  farm: FarmImage,
   forge: ForgeImage,
   hallofwar: HallOfWarImage,
-  hospital: AcademyImage,
+  hospital: HospitalImage,
   ironmine: AcademyImage,
-  lookouttower: AcademyImage,
-  lumberyard: AcademyImage,
+  lookouttower: LookoutTower,
+  lumberyard: LumberyardImage,
   militarytent: AcademyImage,
   munitionsexchange: MunitionsExchangeImage,
   shootingrange: ShootingRangeImage,
   silvermine: AcademyImage,
   stables: StablesImage,
-  tradestation: AcademyImage,
+  tradestation: TradeStationImage,
   trapfactory: AcademyImage,
-  wall: AcademyImage,
+  wall: WallImage,
   warehouse: WarehouseImage,
 }
 
