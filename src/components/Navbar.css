@@ -8,6 +8,7 @@
   margin-left: 16px;
   margin: 0 auto;
   border-bottom: none;
+  text-align: center
 }
 
 .react-tabs__tab {
@@ -24,12 +25,16 @@
 }
 
 .react-tabs__tab--selected {
-  background: #bc9060;
-  border: 3px solid #bc9060;
+  background: none;
+  border: 2px solid #bc9060;
   color: white;
-  border-radius: 5px;
+  border-radius: 25px;
   font-family: "Roboto";
   font-weight: 800;
+  padding-left: 30px;
+  padding-right: 30px;
+  text-align: center;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .react-tabs__tab--disabled {

@@ -91,32 +91,34 @@
   transition-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
 }
 
-.levelup:hover {
+.levelupIconDiv:hover {
   background: #bc9060;
   color: white;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .levelupText {
-  margin-top: 5px;
   font-size: 16px;
+  margin-top: 5px;
 }
 
 .levelupIconDiv {
   height: 20px;
   width: 20px;
-  margin-left: 20px;
+  margin-left: 25px;
   cursor: pointer;
-  background: red;
+  border-radius: 20px;
+  vertical-align: middle;
+  justify-content: center;
+  margin-top: 7px;
 }
 
 .minus {
   font-size: 18px;
-  margin-top: 6px;
 }
 
 .plus {
   font-size: 18px;
-  margin-top: 6px;
 }
 
 .cardGrid {
