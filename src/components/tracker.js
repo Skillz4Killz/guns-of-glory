@@ -20,9 +20,9 @@ import LumberyardImage from "../images/lumberyard.png"
 import TradeStationImage from "../images/tradestation.png"
 import WallImage from "../images/wall.png"
 import CastleImage from "../images/castle.png"
+import MilitaryTentImage from "../images/militarytent.png"
 import FoodImage from "../images/food.png"
 import IronImage from "../images/iron.png"
-import MilitaryTentImage from "../images/militarytent.png"
 import SilverImage from "../images/silver.png"
 import WoodImage from "../images/wood.png"
 
@@ -109,8 +109,8 @@ export default props => {
               : 0
           )
           .map(value => {
-            if (value > 1000000) return `${(value / 1000000).toFixed(2)}M`
-            if (value > 1000) return `${(value / 1000).toFixed(2)}K`
+            if (value > 1000000) return `${parseFloat((value / 1000000).toFixed(2))}M`
+            if (value > 1000) return `${parseFloat((value / 1000).toFixed(2))}K`
             return value
           })
 
