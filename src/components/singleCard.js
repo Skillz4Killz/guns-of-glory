@@ -1,6 +1,5 @@
 import React from "react"
 import "./Card.css"
-// import { Link } from "gatsby"
 
 const Card = props => (
   <div className="card">

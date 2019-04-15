@@ -21,6 +21,9 @@ import TradeStationImage from "../images/tradestation.png"
 import WallImage from "../images/wall.png"
 import CastleImage from "../images/castle.png"
 import MilitaryTentImage from "../images/militarytent.png"
+import IronMineImage from "../images/ironmine.png"
+import TrapFactoryImage from "../images/trapfactory.png"
+import SilverMineImage from "../images/silvermine.png"
 import FoodImage from "../images/food.png"
 import IronImage from "../images/iron.png"
 import SilverImage from "../images/silver.png"
@@ -40,16 +43,16 @@ const imageAssets = {
   forge: ForgeImage,
   hallofwar: HallOfWarImage,
   hospital: HospitalImage,
-  ironmine: AcademyImage,
+  ironmine: IronMineImage,
   lookouttower: LookoutTower,
   lumberyard: LumberyardImage,
   militarytent: MilitaryTentImage,
   munitionsexchange: MunitionsExchangeImage,
   shootingrange: ShootingRangeImage,
-  silvermine: AcademyImage,
+  silvermine: SilverMineImage,
   stables: StablesImage,
   tradestation: TradeStationImage,
-  trapfactory: AcademyImage,
+  trapfactory: TrapFactoryImage,
   wall: WallImage,
   warehouse: WarehouseImage,
   food: FoodImage,

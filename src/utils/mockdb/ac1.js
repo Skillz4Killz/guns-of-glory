@@ -1,5 +1,9 @@
 export default {
   buildings: {
+    castle: {
+      name: "Castle",
+      levels: [],
+    },
     academy: {
       name: "Academy",
       levels: [],
@@ -14,10 +18,6 @@ export default {
     },
     barracks: {
       name: "Barracks",
-      levels: [],
-    },
-    castle: {
-      name: "Castle",
       levels: [],
     },
     embassy: {

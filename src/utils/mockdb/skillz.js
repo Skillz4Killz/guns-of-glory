@@ -1,8 +1,12 @@
 export default {
   buildings: {
+    castle: {
+      name: "Castle",
+      levels: [20],
+    },
     academy: {
       name: "Academy",
-      levels: [19],
+      levels: [20],
     },
     airshipdock: {
       name: "Airship Dock",
@@ -15,10 +19,6 @@ export default {
     barracks: {
       name: "Barracks",
       levels: [19],
-    },
-    castle: {
-      name: "Castle",
-      levels: [20],
     },
     embassy: {
       name: "Embassy",
