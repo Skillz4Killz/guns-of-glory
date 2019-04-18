@@ -143,7 +143,7 @@ export default props => {
               { type: "Silver", image: SilverImage, amount: neededResource[3] },
             ]}
             level={building.levels[0]}
-            maxLevel={buildingLevels.length}
+            maxLevel={allowedLevels[allowedLevels.length - 1].substring(6)}
             unlocks={allowedLevels.length > 1 ? buildingDetails[allowedLevels[1]].unlocks.map(u => imageAssets[u.toLowerCase().replace(' ', '')] || imageAssets.firestarters) : []}
           />
         ) : null

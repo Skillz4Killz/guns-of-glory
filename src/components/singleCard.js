@@ -27,6 +27,8 @@ class Card extends React.Component {
     this.state = {
       isFlipped: false,
       open: false,
+      level: 1,
+      maxLevel: 40,
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -36,23 +38,31 @@ class Card extends React.Component {
     this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
   }
 
-  handleTooltipClose = () => {
-    this.setState({ open: false });
-  };
+  minusLevel = (e) => {
+    e.stopPropagation()
+    this.setState({ level: this.state.level - 1 });
+  }
 
-  handleTooltipOpen = () => {
-    this.setState({ open: true });
-  };
+  addLevel = (e) => {
+    e.stopPropagation()
+    this.setState({ level: this.state.level + 1 });
+  }
+
+  componentDidMount() {
+    this.setState({ level: this.props.level, maxLevel: this.props.maxLevel });
+  }
 
 
   render() {
-    return (
+    return this.props.name === 'Castle' || this.state.level < this.state.maxLevel ? (
       <ReactCardFlipper height='280px' isFlipped={this.state.isFlipped} flipDirection="horizontal">
         <Box className="card" key="front" onClick={this.handleClick} >
           <img src={this.props.image} alt={this.props.text} className="cardImage" />
-          <div className="badge">{this.props.level}</div>
+          <div className="badge">{this.state.level}</div>
           <h3 className="buildingName">{this.props.name}</h3>
-          <p className="resourcesLeft">{this.props.text}</p>
+          <p className="resourcesLeft">{this.state.level < this.state.maxLevel
+            ? `Resources left to lvl ${this.state.maxLevel}`
+            : "Maxed Out Building"}</p>
           <div className="resources">
             {this.props.resources.map((resource, index) => {
               return resource.amount ? (
@@ -65,29 +75,29 @@ class Card extends React.Component {
           </div>
           <div className="levelup">
             <div className="levelupIconDiv">
-              <h1 className="minus">-</h1>
+              <h1 className="minus" onClick={this.minusLevel}>-</h1>
             </div>
-            <p className="levelupText">Level {this.props.level}</p>
+            <p className="levelupText">Level {this.state.level}</p>
             <div className="levelupIconDiv">
-              <h1 className="plus">+</h1>
+              <h1 className="plus" onClick={this.addLevel}>+</h1>
             </div>
           </div>
         </Box>
         <Box className="card" key="back" onClick={this.handleClick}>
           <img src={this.props.image} alt={this.props.text} className="cardImage" />
-          <div className="badge">{this.props.level}</div>
+          <div className="badge">{this.state.level}</div>
           <h3 className="buildingName">{this.props.name}</h3>
           <p className="resourcesLeft">Unlocks</p>
           <div className="resources">
             {this.props.unlocks.map((unlock, index) => (
               <div key={index}>
-                <img src={unlock} className="resourcesBack" />
+                <img src={unlock} className="resourcesBack" alt="unlocked" />
               </div>
             ))}
           </div>
         </Box>
       </ReactCardFlipper>
-    )
+    ) : null
   }
 }
 
