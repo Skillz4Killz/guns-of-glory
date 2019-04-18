@@ -28,6 +28,9 @@ import FoodImage from "../images/food.png"
 import IronImage from "../images/iron.png"
 import SilverImage from "../images/silver.png"
 import WoodImage from "../images/wood.png"
+import BombardiersImage from "../images/bombardiers.png"
+import FirestarterImage from "../images/firestarters.png"
+import HeavebombardiersImage from "../images/heavybombardiers.png"
 
 import BuildingConstants from "../constants/buildings/index"
 const resourceTypes = ["food", "wood", "iron", "silver", "badges"]
@@ -58,7 +61,10 @@ const imageAssets = {
   food: FoodImage,
   wood: WoodImage,
   iron: IronImage,
-  silver: SilverImage
+  silver: SilverImage,
+  bombardiers: BombardiersImage,
+  firestarters: FirestarterImage,
+  heavybombardiers: HeavebombardiersImage
 }
 
 export default props => {
@@ -117,6 +123,7 @@ export default props => {
             return value
           })
 
+        if (buildingName === 'barracks') console.log(allowedLevels[1])
         return allowedLevels[allowedLevels.length - 1] ? (
           <SingleCard
             key={index}
@@ -137,6 +144,7 @@ export default props => {
             ]}
             level={building.levels[0]}
             maxLevel={buildingLevels.length}
+            unlocks={allowedLevels.length > 1 ? buildingDetails[allowedLevels[1]].unlocks.map(u => imageAssets[u.toLowerCase().replace(' ', '')] || imageAssets.firestarters) : []}
           />
         ) : null
       })}

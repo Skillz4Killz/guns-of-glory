@@ -18,7 +18,7 @@ export default {
     },
     barracks: {
       name: "Barracks",
-      levels: [19],
+      levels: [18],
     },
     embassy: {
       name: "Embassy",
@@ -62,7 +62,7 @@ export default {
     },
     shootingrange: {
       name: "Shooting Range",
-      levels: [16],
+      levels: [15],
     },
     silvermine: {
       name: "Silver Mine",

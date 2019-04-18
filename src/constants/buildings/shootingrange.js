@@ -168,7 +168,7 @@ export default {
     time: { value: "13:47:43", seconds: 49663 },
     xp: 25589,
     power: 26531,
-    unlocks: ["Heavy Bombardiers"],
+    unlocks: ["Heavy Bombardiers", "Fire Starters"],
   },
   level_17: {
     level: 17,

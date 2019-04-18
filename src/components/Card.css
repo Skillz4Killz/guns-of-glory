@@ -59,6 +59,10 @@
   text-align: center;
 }
 
+.resourcesBack {
+  height: 50px;
+}
+
 .resourceName {
   font-size: 12px;
   color: #6f879f;

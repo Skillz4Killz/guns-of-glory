@@ -74,14 +74,16 @@ class Card extends React.Component {
           </div>
         </Box>
         <Box className="card" key="back" onClick={this.handleClick}>
-          <div className="levelup">
-            <div className="levelupIconDiv">
-              <h1 className="minus">-</h1>
-            </div>
-            <p className="levelupText">Level {this.props.level}</p>
-            <div className="levelupIconDiv">
-              <h1 className="plus">+</h1>
-            </div>
+          <img src={this.props.image} alt={this.props.text} className="cardImage" />
+          <div className="badge">{this.props.level}</div>
+          <h3 className="buildingName">{this.props.name}</h3>
+          <p className="resourcesLeft">Unlocks</p>
+          <div className="resources">
+            {this.props.unlocks.map((unlock, index) => (
+              <div key={index}>
+                <img src={unlock} className="resourcesBack" />
+              </div>
+            ))}
           </div>
         </Box>
       </ReactCardFlipper>
