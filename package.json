@@ -22,10 +22,12 @@
     "rc-slider": "^8.6.9",
     "react": "^16.8.6",
     "react-apollo": "^2.5.4",
+    "react-card-flip": "^0.6.0",
     "react-card-flipper": "^1.0.1",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
-    "react-tabs": "^3.0.0"
+    "react-tabs": "^3.0.0",
+    "styled-components": "^4.2.0"
   },
   "devDependencies": {
     "prettier": "^1.16.4"
