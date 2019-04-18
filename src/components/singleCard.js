@@ -63,7 +63,7 @@ class Card extends React.Component {
     return this.props.name === 'Castle' || this.state.level < this.state.maxLevel ? (
       <ReactCardFlipper height='280px' isFlipped={this.state.isFlipped} flipDirection="horizontal">
         <Box className="card" key="front" onClick={this.handleClick} >
-          <img src={this.props.image} alt={this.props.text} className="cardImage" />
+          <img src={this.props.image} alt={this.props.name} className="cardImage" />
           <div className="badge">{this.state.level}</div>
           <h3 className="buildingName">{this.props.name}</h3>
           <p className="resourcesLeft">{this.state.level < this.state.maxLevel
@@ -90,7 +90,7 @@ class Card extends React.Component {
           </div>
         </Box>
         <Box className="card" key="back" onClick={this.handleClick}>
-          <img src={this.props.image} alt={this.props.text} className="cardImage" />
+          <img src={this.props.image} alt={this.props.name} className="cardImage" />
           <div className="badge">{this.state.level}</div>
           <h3 className="buildingName">{this.props.name}</h3>
           <p className="resourcesLeft">Unlocks</p>

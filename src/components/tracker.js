@@ -34,7 +34,7 @@ import HeavebombardiersImage from "../images/heavybombardiers.png"
 
 import BuildingConstants from "../constants/buildings/index"
 import { remainingResources } from "../utils/utils"
-const resourceTypes = ["food", "wood", "iron", "silver", "badges"]
+// const resourceTypes = ["food", "wood", "iron", "silver", "badges"]
 
 const imageAssets = {
   academy: AcademyImage,
@@ -106,37 +106,12 @@ export default props => {
           return true
         })
 
-        const neededResource = resourceTypes
-          .map(type =>
-            allowedLevels.length
-              ? allowedLevels
-                .map(
-                  key =>
-                    buildingDetails[key].resources[type] *
-                    building.levels.length
-                )
-                .reduce((prev, current) => prev + current)
-              : 0
-          )
-          .map(value => {
-            if (value > 1000000) return `${parseFloat((value / 1000000).toFixed(2))}M`
-            if (value > 1000) return `${parseFloat((value / 1000).toFixed(2))}K`
-            return value
-          })
-
         return allowedLevels[allowedLevels.length - 1] ? (
           <SingleCard
             key={index}
             building={buildingDetails}
             image={imageAssets[buildingName]}
             name={building.name}
-            text={
-              allowedLevels[allowedLevels.length - 1]
-                ? `Resources left to lvl ${allowedLevels[
-                  allowedLevels.length - 1
-                ].substring(6)}`
-                : "Maxed Out Building"
-            }
             resources={remainingResources(buildingDetails, building.levels[0] + 1, allowedLevels[allowedLevels.length - 1].substring(6))}
             level={building.levels[0]}
             maxLevel={allowedLevels[allowedLevels.length - 1].substring(6)}
