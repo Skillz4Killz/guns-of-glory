@@ -2,6 +2,7 @@ import React from "react"
 import ReactCardFlipper from "react-card-flip"
 import "./Card.css"
 import styled from 'styled-components'
+import { remainingResources } from '../utils/utils'
 
 const Box = styled.div`
 width: 320px;
@@ -29,6 +30,7 @@ class Card extends React.Component {
       open: false,
       level: 1,
       maxLevel: 40,
+      resources: [],
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -40,16 +42,20 @@ class Card extends React.Component {
 
   minusLevel = (e) => {
     e.stopPropagation()
-    this.setState({ level: this.state.level - 1 });
+    const newLevel = this.state.level - 1;
+    const resources = remainingResources(this.props.building, newLevel + 1, this.state.maxLevel);
+    this.setState({ level: newLevel, resources });
   }
 
   addLevel = (e) => {
     e.stopPropagation()
-    this.setState({ level: this.state.level + 1 });
+    const newLevel = this.state.level + 1;
+    const resources = remainingResources(this.props.building, newLevel + 1, this.state.maxLevel);
+    this.setState({ level: newLevel, resources });
   }
 
   componentDidMount() {
-    this.setState({ level: this.props.level, maxLevel: this.props.maxLevel });
+    this.setState({ level: this.props.level, maxLevel: this.props.maxLevel, resources: this.props.resources });
   }
 
 
@@ -64,7 +70,7 @@ class Card extends React.Component {
             ? `Resources left to lvl ${this.state.maxLevel}`
             : "Maxed Out Building"}</p>
           <div className="resources">
-            {this.props.resources.map((resource, index) => {
+            {this.state.resources.map((resource, index) => {
               return resource.amount ? (
                 <div key={index}>
                   <p className="resources">{resource.amount}</p>
@@ -74,12 +80,12 @@ class Card extends React.Component {
             })}
           </div>
           <div className="levelup">
-            <div className="levelupIconDiv">
+            {this.state.level > 1 ? (<div className="levelupIconDiv">
               <h1 className="minus" onClick={this.minusLevel}>-</h1>
-            </div>
+            </div>) : null}
             <p className="levelupText">Level {this.state.level}</p>
             <div className="levelupIconDiv">
-              <h1 className="plus" onClick={this.addLevel}>+</h1>
+              <h1 className="plus" onClick={this.addLevel}>{this.state.level < this.state.maxLevel ? "+" : ""}</h1>
             </div>
           </div>
         </Box>

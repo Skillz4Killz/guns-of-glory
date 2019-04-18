@@ -33,6 +33,7 @@ import FirestarterImage from "../images/firestarters.png"
 import HeavebombardiersImage from "../images/heavybombardiers.png"
 
 import BuildingConstants from "../constants/buildings/index"
+import { remainingResources } from "../utils/utils"
 const resourceTypes = ["food", "wood", "iron", "silver", "badges"]
 
 const imageAssets = {
@@ -123,10 +124,10 @@ export default props => {
             return value
           })
 
-        if (buildingName === 'barracks') console.log(allowedLevels[1])
         return allowedLevels[allowedLevels.length - 1] ? (
           <SingleCard
             key={index}
+            building={buildingDetails}
             image={imageAssets[buildingName]}
             name={building.name}
             text={
@@ -136,12 +137,7 @@ export default props => {
                 ].substring(6)}`
                 : "Maxed Out Building"
             }
-            resources={[
-              { type: "Food", image: FoodImage, amount: neededResource[0] },
-              { type: "Wood", image: WoodImage, amount: neededResource[1] },
-              { type: "Iron", image: IronImage, amount: neededResource[2] },
-              { type: "Silver", image: SilverImage, amount: neededResource[3] },
-            ]}
+            resources={remainingResources(buildingDetails, building.levels[0] + 1, allowedLevels[allowedLevels.length - 1].substring(6))}
             level={building.levels[0]}
             maxLevel={allowedLevels[allowedLevels.length - 1].substring(6)}
             unlocks={allowedLevels.length > 1 ? buildingDetails[allowedLevels[1]].unlocks.map(u => imageAssets[u.toLowerCase().replace(' ', '')] || imageAssets.firestarters) : []}
