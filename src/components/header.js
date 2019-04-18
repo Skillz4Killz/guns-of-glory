@@ -1,15 +1,13 @@
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import { logout, getProfile } from "../services/auth"
+// import { logout } from "../services/auth"
 import "./header.css"
 
 const Header = ({ siteTitle }) => {
-  const user = getProfile()
-  console.log(user)
   return (
     <header className="header">
-      <div className="navDiv">
+      {/* <div className="navDiv">
         <h1 className='gameLogo'>GoGHub</h1>
         <div className="rightSideNav">
           {user ? (
@@ -37,7 +35,7 @@ const Header = ({ siteTitle }) => {
             </Link>
           )}
         </div>
-      </div>
+          </div>*/}
     </header>
   )
 }
