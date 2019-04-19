@@ -5,6 +5,7 @@ import "react-tabs/style/react-tabs.css"
 
 import Tracker from "../components/tracker"
 import Overview from "../components/overview"
+import ComingSoon from "../components/comingSoon"
 
 import player from "../utils/mockdb/skillz"
 import './Navbar.css'
@@ -33,10 +34,10 @@ const Profile = () => {
           <Tracker player={player} category="outer" />
         </TabPanel>
         <TabPanel>
-          <p>Placeholder for player troops</p>
+          <ComingSoon />
         </TabPanel>
         <TabPanel>
-          <p>Placeholder for player guards</p>
+          <ComingSoon />
         </TabPanel>
       </Tabs>
     </div>
