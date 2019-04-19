@@ -6,7 +6,7 @@ export default {
     },
     academy: {
       name: "Academy",
-      levels: [20],
+      levels: [19],
     },
     airshipdock: {
       name: "Airship Dock",
