@@ -7,8 +7,8 @@ import { remainingResources } from '../utils/utils'
 export const isBrowser = typeof window !== "undefined"
 
 const Box = styled.div`
-width: 320px;
-  height: 390px;
+  width: 320px;
+  height: 100%;
   border-radius: 26px;
   background: #102840;
   border: 3px solid #bc9060;

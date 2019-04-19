@@ -85,7 +85,7 @@
   font-family: "Roboto"
 }
 
-.levelup {
+.levelup{
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -94,10 +94,11 @@
   border-radius: 12px;
   background: transparent;
   border: 2px solid #bc9060;
-  margin: auto;
   text-transform: uppercase;
   font-size: 18px;
-      margin-top: 24px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  margin-left: 36px;
 }
 
 .levelupIconDiv:hover {
