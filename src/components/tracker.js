@@ -108,7 +108,7 @@ export default props => {
 
         return allowedLevels[allowedLevels.length - 1] ? buildingDetails.category === 'outer' ? building.levels.map(level => (
           <SingleCard
-            key={index}
+            key={`${buildingName} + ${Math.random()}`}
             building={buildingDetails}
             image={imageAssets[buildingName]}
             name={building.name}

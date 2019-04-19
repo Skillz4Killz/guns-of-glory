@@ -33,6 +33,7 @@ import FirestarterImage from "../images/firestarters.png"
 import HeavebombardiersImage from "../images/heavybombardiers.png"
 
 import BuildingConstants from "../constants/buildings/index"
+import Analytics from "../components/analytics"
 import { remainingResources } from "../utils/utils"
 // const resourceTypes = ["food", "wood", "iron", "silver", "badges"]
 
@@ -72,47 +73,51 @@ export default props => {
 	const buildings = Object.values(props.player.buildings)
 
 	return (
-		<div className="itemGrid">
-			{buildings.map((building, index) => {
-				const buildingName = building.name
-					.split(" ")
-					.join("")
-					.toLowerCase()
-				const buildingDetails = BuildingConstants[buildingName]
+		<div>
+			<Analytics buildings={buildings}></Analytics>
+			<div className="itemGrid">
+				{buildings.map((building, index) => {
+					const buildingName = building.name
+						.split(" ")
+						.join("")
+						.toLowerCase()
+					const buildingDetails = BuildingConstants[buildingName]
 
-				const buildingLevels = Object.keys(buildingDetails).filter(l =>
-					l.startsWith("level_")
-				)
+					const buildingLevels = Object.keys(buildingDetails).filter(l =>
+						l.startsWith("level_")
+					)
 
-				const allowedLevels = buildingLevels.filter(l => {
-					if (buildingDetails[l].level < building.levels[0]) return false
-					const requirements = buildingDetails[l].required
-					for (const requirement of requirements) {
-						const currentRequiredBuildingLevel = buildings.find(
-							b => b.name.toLowerCase() === requirement.name.toLowerCase()
-						).levels[0]
-						if (currentRequiredBuildingLevel < requirement.level) return false
-					}
-					return true
-				})
+					const allowedLevels = buildingLevels.filter(l => {
+						if (buildingDetails[l].level < building.levels[0]) return false
+						const requirements = buildingDetails[l].required
+						for (const requirement of requirements) {
+							const currentRequiredBuildingLevel = buildings.find(
+								b => b.name.toLowerCase() === requirement.name.toLowerCase()
+							).levels[0]
+							if (currentRequiredBuildingLevel < requirement.level) return false
+						}
+						return true
+					})
 
-				return allowedLevels[allowedLevels.length - 1] ? building.levels.map((level, lIndex) => {
-					const allItemsForRemainingLevels = [];
-					for (let i = level; i <= allowedLevels[allowedLevels.length - 1].substring(6); i++) {
-						allItemsForRemainingLevels.push((
-							<SingleItem
-								building={buildingDetails}
-								image={imageAssets[buildingName]}
-								name={building.name}
-								resources={remainingResources(buildingDetails, i, i)}
-								level={i}
-								maxLevel={allowedLevels[allowedLevels.length - 1].substring(6)}
-							/>
-						))
-					}
-					return allItemsForRemainingLevels
-				}) : null
-			})}
+					return allowedLevels[allowedLevels.length - 1] ? building.levels.map((level, lIndex) => {
+						const allItemsForRemainingLevels = [];
+						for (let i = level; i <= allowedLevels[allowedLevels.length - 1].substring(6); i++) {
+							allItemsForRemainingLevels.push((
+								<SingleItem
+									key={`${buildingName} ${i}`}
+									building={buildingDetails}
+									image={imageAssets[buildingName]}
+									name={building.name}
+									resources={remainingResources(buildingDetails, i, i)}
+									level={i}
+									maxLevel={allowedLevels[allowedLevels.length - 1].substring(6)}
+								/>
+							))
+						}
+						return allItemsForRemainingLevels
+					}) : null
+				})}
+			</div>
 		</div>
 	)
 }
