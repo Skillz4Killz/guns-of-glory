@@ -95,6 +95,7 @@ export default props => {
 
         const allowedLevels = buildingLevels.filter(l => {
           if (buildingDetails[l].level < building.levels[0]) return false
+          if (buildingName.toLowerCase() === 'castle') return true;
           const requirements = buildingDetails[l].required
           for (const requirement of requirements) {
             const currentRequiredBuildingLevel = buildings.find(
