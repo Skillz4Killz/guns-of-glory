@@ -1,7 +1,18 @@
-import React from "react"
-import { Link } from "gatsby"
-import Layout from "../components/layout"
+import React from 'react'
+import { Link } from 'gatsby'
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs"
+import "react-tabs/style/react-tabs.css"
+
+// import FetchingExample from '../containers/FetchingExample'
+import SignOut from '../containers/SignOut'
+import Layout from '../components/layout'
+import Tracker from "../components/tracker"
+import Overview from "../components/overview"
+import ComingSoon from "../components/comingSoon"
 import SEO from "../components/seo"
+import '../components/Navbar.css'
+
+import player from "../utils/mockdb/skillz"
 
 const IndexPage = () => (
   <Layout>
