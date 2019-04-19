@@ -106,18 +106,29 @@ export default props => {
           return true
         })
 
-        return allowedLevels[allowedLevels.length - 1] ? (
+        return allowedLevels[allowedLevels.length - 1] ? buildingDetails.category === 'outer' ? building.levels.map(level => (
           <SingleCard
             key={index}
             building={buildingDetails}
             image={imageAssets[buildingName]}
             name={building.name}
-            resources={remainingResources(buildingDetails, building.levels[0] + 1, allowedLevels[allowedLevels.length - 1].substring(6))}
-            level={building.levels[0]}
+            resources={remainingResources(buildingDetails, level + 1, allowedLevels[allowedLevels.length - 1].substring(6))}
+            level={level}
             maxLevel={allowedLevels[allowedLevels.length - 1].substring(6)}
             unlocks={allowedLevels.length > 1 ? buildingDetails[allowedLevels[1]].unlocks.map(u => imageAssets[u.toLowerCase().replace(' ', '')] || imageAssets.firestarters) : []}
           />
-        ) : null
+        )) : (
+            <SingleCard
+              key={index}
+              building={buildingDetails}
+              image={imageAssets[buildingName]}
+              name={building.name}
+              resources={remainingResources(buildingDetails, building.levels[0] + 1, allowedLevels[allowedLevels.length - 1].substring(6))}
+              level={building.levels[0]}
+              maxLevel={allowedLevels[allowedLevels.length - 1].substring(6)}
+              unlocks={allowedLevels.length > 1 ? buildingDetails[allowedLevels[1]].unlocks.map(u => imageAssets[u.toLowerCase().replace(' ', '')] || imageAssets.firestarters) : []}
+            />
+          ) : null
       })}
     </div>
   )

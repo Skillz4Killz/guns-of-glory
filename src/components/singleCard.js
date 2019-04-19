@@ -60,7 +60,7 @@ class Card extends React.Component {
 
 
   render() {
-    return this.props.name === 'Castle' || this.state.level < this.state.maxLevel ? (
+    return (
       <ReactCardFlipper height='280px' isFlipped={this.state.isFlipped} flipDirection="horizontal">
         <Box className="card" key="front" onClick={this.handleClick} >
           <img src={this.props.image} alt={this.props.name} className="cardImage" />
@@ -80,12 +80,12 @@ class Card extends React.Component {
             })}
           </div>
           <div className="levelup">
-            {this.state.level > 1 ? (<div className="levelupIconDiv">
-              <h1 className="minus" onClick={this.minusLevel}>-</h1>
-            </div>) : null}
+            <div className={this.state.level > 1 ? "levelupIconDiv" : "disabledLevelupIconDiv"}>
+              <h1 className={this.state.level > 1 ? "minus" : "disabledMinus"} onClick={this.state.level > 1 ? this.minusLevel : null}>-</h1>
+            </div>
             <p className="levelupText">Level {this.state.level}</p>
-            <div className="levelupIconDiv">
-              <h1 className="plus" onClick={this.addLevel}>{this.state.level < this.state.maxLevel ? "+" : ""}</h1>
+            <div className={this.state.level < this.state.maxLevel ? "levelupIconDiv" : "disabledLevelupIconDiv"}>
+              <h1 className={this.state.level < this.state.maxLevel ? "plus" : "disabledPlus"} onClick={this.state.level < this.state.maxLevel ? this.addLevel : null}>+</h1>
             </div>
           </div>
         </Box>
@@ -103,7 +103,7 @@ class Card extends React.Component {
           </div>
         </Box>
       </ReactCardFlipper>
-    ) : null
+    )
   }
 }
 

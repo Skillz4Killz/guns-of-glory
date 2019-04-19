@@ -4,6 +4,7 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs"
 import "react-tabs/style/react-tabs.css"
 
 import Tracker from "../components/tracker"
+import Overview from "../components/overview"
 
 import player from "../utils/mockdb/skillz"
 import './Navbar.css'
@@ -13,14 +14,18 @@ const Profile = () => {
   return (
     <div>
       <div className='banner'></div>
-      <h1 style={{ color: 'white', fontSize: '24px', position: 'relative', marginTop:'32px', textAlign:'center'}}>Your Profile Page</h1>
+      <h1 style={{ color: 'white', fontSize: '24px', position: 'relative', marginTop: '32px', textAlign: 'center' }}>Your Profile Page</h1>
       <Tabs>
         <TabList>
+          <Tab>Overview</Tab>
           <Tab>Inner</Tab>
           <Tab>Outer</Tab>
           <Tab>Army</Tab>
           <Tab>Guards</Tab>
         </TabList>
+        <TabPanel>
+          <Overview player={player} />
+        </TabPanel>
         <TabPanel>
           <Tracker player={player} category="inner" />
         </TabPanel>
