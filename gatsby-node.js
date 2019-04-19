@@ -11,6 +11,10 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
       module: {
         rules: [
           {
+            test: /react-card-flip/,
+            use: loaders.null()
+          },
+          {
             test: /auth0-js/,
             use: loaders.null(),
           },

@@ -4,6 +4,8 @@ import "./Card.css"
 import styled from 'styled-components'
 import { remainingResources } from '../utils/utils'
 
+export const isBrowser = typeof window !== "undefined"
+
 const Box = styled.div`
 width: 320px;
   height: 390px;
@@ -60,7 +62,7 @@ class Card extends React.Component {
 
 
   render() {
-    return (
+    return isBrowser ? (
       <ReactCardFlipper height='280px' isFlipped={this.state.isFlipped} flipDirection="horizontal">
         <Box className="card" key="front" onClick={this.handleClick} >
           <img src={this.props.image} alt={this.props.name} className="cardImage" />
@@ -103,7 +105,7 @@ class Card extends React.Component {
           </div>
         </Box>
       </ReactCardFlipper>
-    )
+    ) : null
   }
 }
 

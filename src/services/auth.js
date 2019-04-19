@@ -15,12 +15,12 @@ export const isAuthenticated = () => {
 
 const auth = isBrowser
   ? new auth0.WebAuth({
-      domain: process.env.AUTH0_DOMAIN,
-      clientID: process.env.AUTH0_CLIENTID,
-      redirectUri: process.env.AUTH0_CALLBACK,
-      responseType: "token id_token",
-      scope: "openid profile email",
-    })
+    domain: process.env.AUTH0_DOMAIN,
+    clientID: process.env.AUTH0_CLIENTID,
+    redirectUri: process.env.AUTH0_CALLBACK,
+    responseType: "token id_token",
+    scope: "openid profile email",
+  })
   : {}
 
 export const login = () => {
@@ -42,7 +42,7 @@ export const logout = () => {
   })
 }
 
-const setSession = (cb = () => {}) => (err, authResult) => {
+const setSession = (cb = () => { }) => (err, authResult) => {
   if (err) {
     if (err.error === "login_required") {
       login()
@@ -76,7 +76,7 @@ export const checkSession = callback => {
 
 export const handleAuthentication = callback => {
   console.log("parsing")
-  auth.parseHash(setSession(callback))
+  if (isBrowser) auth.parseHash(setSession(callback))
 }
 
 export const getProfile = () => {

@@ -1,5 +1,4 @@
 import React from "react"
-import "./tracker.css"
 
 import SingleCard from "./singleCard"
 import AcademyImage from "../images/academy.png"
