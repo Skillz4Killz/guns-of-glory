@@ -13,8 +13,6 @@ export const isAuthenticated = () => {
   return tokens.idToken !== false
 }
 
-console.log('env variables', process.env.AUTH0_DOMAIN, process.env.AUTH0_CLIENTID, process.env.AUTH0_CALLBACK)
-
 const auth = isBrowser
   ? new auth0.WebAuth({
     domain: process.env.GATSBY_AUTH0_DOMAIN,
