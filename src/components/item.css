@@ -71,12 +71,12 @@
 }
 
 .done:hover {
-	font-size: 30px;
-	margin-top: -10px;
+  filter: none
 }
 
 .done {
   font-size: 18px;
+  filter: grayscale()
 }
 
 .itemGrid {
