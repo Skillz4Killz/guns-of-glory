@@ -1,11 +1,11 @@
 const config = {
-	apiKey: 'AIzaSyDjS6tGpqjAaC0aXQAGZMkjssABbZzTgSo',
-	authDomain: 'awesome-bb71b.firebaseapp.com',
-	databaseURL: 'https://awesome-bb71b.firebaseio.com',
-	projectId: 'awesome-bb71b',
-	storageBucket: 'awesome-bb71b.appspot.com',
-	messagingSenderId: '646496200074',
-}
+	apiKey: "AIzaSyCZ2ttqEtlXQX1BLX4hHEnWTksm_CrZx5I",
+	authDomain: "guns-of-glory-485ce.firebaseapp.com",
+	databaseURL: "https://guns-of-glory-485ce.firebaseio.com",
+	projectId: "guns-of-glory-485ce",
+	storageBucket: "guns-of-glory-485ce.appspot.com",
+	messagingSenderId: "471636103016"
+};
 
 let firebaseCache
 

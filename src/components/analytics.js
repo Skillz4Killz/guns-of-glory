@@ -8,7 +8,7 @@ import { resourceAnalytics } from "../utils/utils"
 export default (props) => {
 	const data = resourceAnalytics(props.buildings);
 	const inlineStyle = {
-		// position: 'relative',
+		position: 'relative',
 		color: 'red'
 	}
 	return (

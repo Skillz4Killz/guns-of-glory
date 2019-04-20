@@ -40,6 +40,22 @@ export const remainingResources = (building, newLevel, maxLevel) => {
 	]
 }
 
+export const singleResourceValue = (building, newLevel, maxLevel) => {
+	const levels = [];
+
+	for (let i = newLevel; i <= maxLevel; i++) {
+		levels.push(building[`level_${i}`]);
+	}
+
+	const resources = levels.map(level => level.resources)
+
+	let totalResources = 0;
+
+	for (const resource of resources) totalResources += resource.food + (resource.wood * 2) + (resource.iron * 3) + (resource.silver * 4)
+
+	return totalResources
+}
+
 export const resourceAnalytics = (buildings) => {
 	const totalSpent = {
 		food: 0,
