@@ -64,7 +64,6 @@ export const resourceAnalytics = (buildings) => {
 		for (const levelObj of Object.keys(buildingDetails)) {
 			if (!levelObj.startsWith("level_")) continue;
 			for (const buildingLevel of building.levels) {
-				console.log(levelObj)
 				const levelData = buildingDetails[levelObj];
 				if (levelData.level > buildingLevel) {
 					totalRemaining.food += levelData.resources.food;

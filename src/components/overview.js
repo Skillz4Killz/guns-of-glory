@@ -33,7 +33,7 @@ import FirestarterImage from "../images/firestarters.png"
 import HeavebombardiersImage from "../images/heavybombardiers.png"
 
 import BuildingConstants from "../constants/buildings/index"
-import Analytics from "../components/analytics"
+// import Analytics from "../components/analytics"
 import { remainingResources } from "../utils/utils"
 // const resourceTypes = ["food", "wood", "iron", "silver", "badges"]
 
@@ -74,9 +74,9 @@ export default props => {
 
 	return (
 		<div>
-			<Analytics buildings={buildings}></Analytics>
+			{/*<Analytics buildings={buildings}></Analytics>*/}
 			<div className="itemGrid">
-				{buildings.map((building, index) => {
+				{buildings.map((building) => {
 					const buildingName = building.name
 						.split(" ")
 						.join("")

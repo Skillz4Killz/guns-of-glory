@@ -1,9 +1,9 @@
 import React from 'react'
 import { resourceAnalytics } from "../utils/utils"
-import FoodImage from "../images/food.png"
-import IronImage from "../images/iron.png"
-import SilverImage from "../images/silver.png"
-import WoodImage from "../images/wood.png"
+// import FoodImage from "../images/food.png"
+// import IronImage from "../images/iron.png"
+// import SilverImage from "../images/silver.png"
+// import WoodImage from "../images/wood.png"
 
 export default (props) => {
 	const data = resourceAnalytics(props.buildings);
