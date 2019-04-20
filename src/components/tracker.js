@@ -30,6 +30,16 @@ import WoodImage from "../images/wood.png"
 import BombardiersImage from "../images/bombardiers.png"
 import FirestarterImage from "../images/firestarters.png"
 import HeavebombardiersImage from "../images/heavybombardiers.png"
+import ArmoredHorsemenImage from "../images/armoredhorsemen.png"
+import BombardsImage from "../images/bombards.png"
+import FalconetsImage from "../images/falconets.png"
+import GunmenImage from "../images/gunmen.png"
+import HeavyMortarsImage from "../images/heavymortars.png"
+import HuntsmenImage from "../images/huntsmen.png"
+import LightMortarsImage from "../images/lightmortars.png"
+import MinionCannonsImage from "../images/minioncannons.png"
+import MountedMusketmenImage from "../images/mountedmusketmen.png"
+import MusketmenImage from "../images/musketmen.png"
 
 import BuildingConstants from "../constants/buildings/index"
 import { remainingResources } from "../utils/utils"
@@ -64,7 +74,17 @@ const imageAssets = {
   silver: SilverImage,
   bombardiers: BombardiersImage,
   firestarters: FirestarterImage,
-  heavybombardiers: HeavebombardiersImage
+  heavybombardiers: HeavebombardiersImage,
+  armoredhorsemen: ArmoredHorsemenImage,
+  bombards: BombardsImage,
+  falconets: FalconetsImage,
+  gunmen: GunmenImage,
+  heavymortars: HeavyMortarsImage,
+  huntsmen: HuntsmenImage,
+  lightmortars: LightMortarsImage,
+  minioncannons: MinionCannonsImage,
+  mountedmusketmen: MountedMusketmenImage,
+  musketmen: MusketmenImage,
 }
 
 export default props => {
