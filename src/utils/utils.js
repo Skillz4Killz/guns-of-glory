@@ -5,7 +5,8 @@ import WoodImage from "../images/wood.png"
 
 import BuildingConstants from "../constants/buildings/index"
 
-export const amountToString = (amount) => {
+export const amountToString = (amount, type) => {
+	if (type === 'time') return `${Math.floor(amount / 60 / 60 / 24)}d ${Math.floor(amount / 60 / 60 % 24)}m`
 	return amount > 1000000 ? `${parseFloat((amount / 1000000).toFixed(2))}M` : amount > 1000 ? `${parseFloat((amount / 1000).toFixed(2))}K` : amount
 }
 
@@ -61,14 +62,16 @@ export const resourceAnalytics = (buildings) => {
 		food: 0,
 		wood: 0,
 		iron: 0,
-		silver: 0
+		silver: 0,
+		seconds: 0
 	}
 
 	const totalRemaining = {
 		food: 0,
 		wood: 0,
 		iron: 0,
-		silver: 0
+		silver: 0,
+		seconds: 0,
 	}
 
 	for (const building of buildings) {
@@ -86,11 +89,13 @@ export const resourceAnalytics = (buildings) => {
 					totalRemaining.wood += levelData.resources.wood;
 					totalRemaining.iron += levelData.resources.iron;
 					totalRemaining.silver += levelData.resources.silver;
+					totalRemaining.seconds += levelData.time.seconds
 				} else {
 					totalSpent.food += levelData.resources.food;
 					totalSpent.wood += levelData.resources.wood;
 					totalSpent.iron += levelData.resources.iron;
 					totalSpent.silver += levelData.resources.silver;
+					totalSpent.seconds += levelData.time.seconds
 				}
 			}
 		}
@@ -100,13 +105,15 @@ export const resourceAnalytics = (buildings) => {
 				food: amountToString(totalSpent.food),
 				wood: amountToString(totalSpent.wood),
 				iron: amountToString(totalSpent.iron),
-				silver: amountToString(totalSpent.silver)
+				silver: amountToString(totalSpent.silver),
+				seconds: amountToString(totalSpent.seconds, 'time')
 			},
 			left: {
 				food: amountToString(totalRemaining.food),
 				wood: amountToString(totalRemaining.wood),
 				iron: amountToString(totalRemaining.iron),
-				silver: amountToString(totalRemaining.silver)
+				silver: amountToString(totalRemaining.silver),
+				seconds: amountToString(totalRemaining.seconds, 'time')
 			}
 		}
 	}
