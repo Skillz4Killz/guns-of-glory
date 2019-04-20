@@ -1,12 +1,5 @@
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   if (stage === "build-html") {
-    /*
-     * During the build step, `auth0-js` will break because it relies on
-     * browser-specific APIs. Fortunately, we don’t need it during the build.
-     * Using Webpack’s null loader, we’re able to effectively ignore `auth0-js`
-     * during the build. (See `src/utils/auth.js` to see how we prevent this
-     * from breaking the app.)
-     */
     actions.setWebpackConfig({
       module: {
         rules: [
@@ -15,9 +8,13 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
             use: loaders.null()
           },
           {
-            test: /auth0-js/,
+            test: /firebase/,
             use: loaders.null(),
           },
+          {
+            test: /react-firebaseui/,
+            use: loaders.null()
+          }
         ],
       },
     })

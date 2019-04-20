@@ -34,7 +34,7 @@ import HeavebombardiersImage from "../images/heavybombardiers.png"
 
 import BuildingConstants from "../constants/buildings/index"
 import Analytics from "../components/analytics"
-import { remainingResources } from "../utils/utils"
+import { remainingResources, singleResourceValue } from "../utils/utils"
 // const resourceTypes = ["food", "wood", "iron", "silver", "badges"]
 
 const imageAssets = {
@@ -71,52 +71,61 @@ const imageAssets = {
 
 export default props => {
 	const buildings = Object.values(props.player.buildings)
+	const totalResourceValues = []
+
+	for (const building of buildings) {
+		const buildingName = building.name
+			.split(" ")
+			.join("")
+			.toLowerCase()
+		const buildingDetails = BuildingConstants[buildingName]
+
+		const buildingLevels = Object.keys(buildingDetails).filter(l =>
+			l.startsWith("level_")
+		)
+
+		const allowedLevels = buildingLevels.filter(l => {
+			if (buildingDetails[l].level < building.levels[0]) return false
+			const requirements = buildingDetails[l].required
+			for (const requirement of requirements) {
+				const currentRequiredBuildingLevel = buildings.find(
+					b => b.name.toLowerCase() === requirement.name.toLowerCase()
+				).levels[0]
+				if (currentRequiredBuildingLevel < requirement.level) return false
+			}
+			return true
+		})
+
+		if (!allowedLevels[allowedLevels.length - 1]) continue;
+
+		const maxLevel = allowedLevels[allowedLevels.length - 1].substring(6);
+		for (const level of building.levels) {
+			for (let i = level; i <= maxLevel; i++) {
+				const remainingAmount = singleResourceValue(buildingDetails, i, i);
+				totalResourceValues.push({ level: i, amount: remainingAmount, buildingName, name: building.name, details: buildingDetails, maxLevel })
+			}
+		}
+	}
+
+	const sortedValues = totalResourceValues.sort((a, b) => a.amount - b.amount).slice(0, 8)
+	console.log(sortedValues)
 
 	return (
 		<div>
 			<Analytics buildings={buildings}></Analytics>
+			<h1 style={{ position: 'relative' }}>Recommended Upgrades</h1>
 			<div className="itemGrid">
-				{buildings.map((building, index) => {
-					const buildingName = building.name
-						.split(" ")
-						.join("")
-						.toLowerCase()
-					const buildingDetails = BuildingConstants[buildingName]
-
-					const buildingLevels = Object.keys(buildingDetails).filter(l =>
-						l.startsWith("level_")
-					)
-
-					const allowedLevels = buildingLevels.filter(l => {
-						if (buildingDetails[l].level < building.levels[0]) return false
-						const requirements = buildingDetails[l].required
-						for (const requirement of requirements) {
-							const currentRequiredBuildingLevel = buildings.find(
-								b => b.name.toLowerCase() === requirement.name.toLowerCase()
-							).levels[0]
-							if (currentRequiredBuildingLevel < requirement.level) return false
-						}
-						return true
-					})
-
-					return allowedLevels[allowedLevels.length - 1] ? building.levels.map((level, lIndex) => {
-						const allItemsForRemainingLevels = [];
-						for (let i = level; i <= allowedLevels[allowedLevels.length - 1].substring(6); i++) {
-							allItemsForRemainingLevels.push((
-								<SingleItem
-									key={`${buildingName} ${i}`}
-									building={buildingDetails}
-									image={imageAssets[buildingName]}
-									name={building.name}
-									resources={remainingResources(buildingDetails, i, i)}
-									level={i}
-									maxLevel={allowedLevels[allowedLevels.length - 1].substring(6)}
-								/>
-							))
-						}
-						return allItemsForRemainingLevels
-					}) : null
-				})}
+				{sortedValues.map((value, index) => (
+					<SingleItem
+						key={`${index}`}
+						building={value.details}
+						image={imageAssets[value.buildingName]}
+						name={value.name}
+						resources={remainingResources(value.details, value.level, value.level)}
+						level={value.level}
+						maxLevel={value.maxLevel}
+					/>
+				))}
 			</div>
 		</div>
 	)
