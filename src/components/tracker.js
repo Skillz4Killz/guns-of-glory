@@ -136,6 +136,7 @@ export default props => {
             level={level}
             maxLevel={allowedLevels[allowedLevels.length - 1].substring(6)}
             unlocks={allowedLevels.length > 1 ? buildingDetails[allowedLevels[1]].unlocks.map(u => imageAssets[u.toLowerCase().replace(' ', '')] || imageAssets.firestarters) : []}
+            time={buildingDetails[`level_${level}`].time.value}
           />
         )) : (
             <SingleCard
@@ -147,6 +148,7 @@ export default props => {
               level={building.levels[0]}
               maxLevel={allowedLevels[allowedLevels.length - 1].substring(6)}
               unlocks={allowedLevels.length > 1 ? buildingDetails[allowedLevels[1]].unlocks.map(u => imageAssets[u.toLowerCase().replace(' ', '')] || imageAssets.firestarters) : []}
+              time={buildingDetails[`level_${building.levels[0] + 1}`].time.value}
             />
           ) : null
       })}

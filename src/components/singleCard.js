@@ -46,18 +46,20 @@ class Card extends React.Component {
     e.stopPropagation()
     const newLevel = this.state.level - 1;
     const resources = remainingResources(this.props.building, newLevel + 1, this.state.maxLevel);
-    this.setState({ level: newLevel, resources });
+    const newTime = this.props.building[`level_${newLevel + 1}`].time.value
+    this.setState({ level: newLevel, resources, time: newTime });
   }
 
   addLevel = (e) => {
     e.stopPropagation()
     const newLevel = this.state.level + 1;
     const resources = remainingResources(this.props.building, newLevel + 1, this.state.maxLevel);
-    this.setState({ level: newLevel, resources });
+    const newTime = this.props.building[`level_${newLevel + 1}`].time.value
+    this.setState({ level: newLevel, resources, time: newTime });
   }
 
   componentDidMount() {
-    this.setState({ level: this.props.level, maxLevel: this.props.maxLevel, resources: this.props.resources });
+    this.setState({ level: this.props.level, maxLevel: this.props.maxLevel, resources: this.props.resources, time: this.props.time });
   }
 
 
@@ -81,6 +83,11 @@ class Card extends React.Component {
               ) : null
             })}
           </div>
+          {
+            this.state.level < this.state.maxLevel ? (<div>
+              <p>Time: {this.state.time}</p>
+            </div>) : null
+          }
           <div className="levelup">
             <div className={this.state.level > 1 ? "levelupIconDiv" : "disabledLevelupIconDiv"}>
               <h1 className={this.state.level > 1 ? "minus" : "disabledMinus"} onClick={this.state.level > 1 ? this.minusLevel : null}>-</h1>
@@ -104,7 +111,7 @@ class Card extends React.Component {
             ))}
           </div>
         </Box>
-      </ReactCardFlipper>
+      </ReactCardFlipper >
     ) : null
   }
 }
