@@ -3,6 +3,7 @@ html {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
 }
 
 body {
@@ -16,15 +17,7 @@ body {
   height: 100%;
   overflow-x: hidden;
 }
-#___gatsby {
-  height: 100%;
-  margin: 0;
-}
 
-#___gatsby > div {
-  height: 100%;
-  margin: 0;
-}
 
 article,
 aside,
@@ -649,6 +642,7 @@ pre tt:after {
       height: 800px;
       width: 100%;
       position: absolute;
-      margin-top: -32px;
+      margin-top: 32px;
       background-size: cover
   }
+

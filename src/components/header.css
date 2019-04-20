@@ -1,9 +1,10 @@
 .header {
   background: #bc9060;
-  padding: 0;
-  margin: 0 auto;
-  height: 30px;
-  width: 100%;
+  position:fixed;
+    width: 100%;
+    padding: 10px;
+    z-index: 100;
+    transition: 0.8s cubic-bezier(0.02, 0.8, 0.2, 1);
 }
 
 .navDiv {

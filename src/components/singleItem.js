@@ -1,6 +1,6 @@
 import React from "react"
 import "./item.css"
-
+import Check from '../components/svg'
 class Item extends React.Component {
 	constructor() {
 		super();
@@ -31,7 +31,7 @@ class Item extends React.Component {
 				<h3 className="itemBuildingName">{this.props.name}</h3>
 				{<p className="itemResources">{this.state.resources.map((resource) => resource.amount ? `${resource.amount} ${resource.type.substring(0, 1)}` : '').join(' ')}</p>}
 				<div className="itemLevelupIconDiv">
-					<h1 className="done" onClick={this.finishLevel}><span role="img" aria-label="check">✅</span></h1>
+					<h1 className="done" onClick={this.finishLevel}><span role="img" aria-label="check"><Check></Check></span></h1>
 				</div>
 			</div>
 		)

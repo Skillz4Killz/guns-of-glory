@@ -1,0 +1,83 @@
+.TotalResourcesGroup{
+  max-width: 1366px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.TotalResources{
+    width: 320px;
+  height: 138px;
+  border-radius: 26px;
+  background: #102840;
+  border: 3px solid #bc9060;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  font-family: "Roboto";
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+  color: #bc9060;
+  position: relative;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 16px;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.TotalResources h1{
+color: #bc9060;
+font-size: 14px;
+font-family: "Roboto";
+margin-top: 16px;
+margin-bottom: 16px;
+text-transform: uppercase;
+}
+
+.TotalResources p{
+color: #6f879f;
+font-size: 12px;
+font-weight: 800;
+font-family: "Roboto";
+margin-bottom: 0px;
+}
+
+.TotalResources img{
+width: 45px;
+margin: 0;
+}
+
+
+.Resources{
+    display: grid;
+    grid-template-columns: repeat(4, 80px);
+    margin-bottom: 16px;
+    align-items: center;
+   justify-items: center;
+}
+
+@media (max-width: 560px) {
+    .TotalResourcesGroup {
+      display: grid;
+      grid-template-columns: repeat(4, 320px);
+      grid-column-gap: 16px;
+    justify-content: left;
+    overflow-x: visible;
+    width: 100%;
+    white-space: nowrap;
+    position: relative;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+}
+
+::-webkit-scrollbar{
+        height: 10px;
+        width: 0px;
+    }
+    ::-webkit-scrollbar-thumb:horizontal{
+        background: #bc9060;
+        border-radius: 10px;
+    }

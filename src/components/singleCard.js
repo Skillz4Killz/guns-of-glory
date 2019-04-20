@@ -8,7 +8,7 @@ export const isBrowser = typeof window !== "undefined"
 
 const Box = styled.div`
   width: 320px;
-  height: 100%;
+  height: 427.28px;
   border-radius: 26px;
   background: #102840;
   border: 3px solid #bc9060;
@@ -85,7 +85,9 @@ class Card extends React.Component {
           </div>
           {
             this.state.level < this.state.maxLevel ? (<div>
-              <p>Time: {this.state.time}</p>
+              <p
+                style={{ color: 'white', fontSize: '16px', position: 'relative', marginTop: '16px', textAlign: 'center' }}
+              >Time: {this.state.time}</p>
             </div>) : null
           }
           <div className="levelup">

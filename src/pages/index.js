@@ -76,14 +76,16 @@ import SEO from "../components/seo"
 import '../components/Navbar.css'
 
 import player from "../utils/mockdb/skillz"
+import Analytics from "../components/analytics"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <div>
-      <div className='banner'></div>
+      <div className='banner'>
       <h1 style={{ color: 'white', fontSize: '24px', position: 'relative', marginTop: '32px', textAlign: 'center' }}>Your Profile Page</h1>
-      <Tabs>
+        <Analytics buildings={Object.values(player.buildings)}></Analytics>
+        <Tabs>
         <TabList>
           <Tab>Overview</Tab>
           <Tab>Inner</Tab>
@@ -110,6 +112,7 @@ const IndexPage = () => (
     </div>
     <Link to="/page-2/">Go to page 2</Link>
     <SignOut />
+    </div>
   </Layout>
 )
 
