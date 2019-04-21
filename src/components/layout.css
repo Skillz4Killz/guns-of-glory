@@ -11,11 +11,18 @@ body {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   position: relative;
   font-size: 18px;
-  background-color: #08192b;
   margin: 0;
   width: 100%;
   height: 100%;
   overflow-x: hidden;
+  background: linear-gradient(
+        to top,
+        #08192b 1%,
+        #08192b 30%,
+        rgba(25, 26, 27, 0) 100%
+      ),
+      url('../images/guns-of-glory_banner.jpg') no-repeat center top;
+      background-size: cover
 }
 
 

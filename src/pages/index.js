@@ -82,7 +82,6 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <div>
-      <div className='banner'>
       <h1 style={{ color: 'white', fontSize: '24px', position: 'relative', marginTop: '32px', textAlign: 'center' }}>Your Profile Page</h1>
         <Analytics buildings={Object.values(player.buildings)}></Analytics>
         <Tabs>
@@ -110,10 +109,32 @@ const IndexPage = () => (
         </TabPanel>
       </Tabs>
       </div>
-    
-    </div>
 <Link to="/page-2/">Go to page 2</Link>
     <SignOut />
+
+    <footer
+      className="footer"
+      bottomthreshold={50}
+      style={{
+        bottom: '0',
+        backgroundColor: "#050E19",
+        padding: "1rem",
+        fontSize: "14px",
+        fontFamily: "Helvetica",
+        color: "white",
+        textAlign: "center",
+        width: "100%",
+      }}
+    >
+      <p>© {new Date().getFullYear()}, Copyright GoGHub</p>
+      <p>
+        GoGHub is not affiliated or part of Guns of Glory. All Guns of Glory
+        copyrights and art assets belong to Guns of Glory.
+          </p>
+      Made by <a href="https://discord.gg/rWMuMdk">Skillz4Killz</a> and
+          {"  "}
+      <a href="https://twitter.com/AngeloCant1">AngeloC</a>
+    </footer>
   </Layout>
 )
 
