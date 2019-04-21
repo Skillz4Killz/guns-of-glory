@@ -11,7 +11,7 @@ module.exports = {
       options: {
         name: 'GOGHUB',
         short_name: 'GOGHUB',
-        short_name: "starter",
+        short_name: "GoGHub",
         start_url: "/",
         background_color: "#bc9060",
         theme_color: "#050D18",
