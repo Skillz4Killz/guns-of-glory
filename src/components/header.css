@@ -1,19 +1,22 @@
 .header {
-  background: #bc9060;
+  background: #050D18;
     width: 100%;
-    padding: 10px;
     transition: 0.8s cubic-bezier(0.02, 0.8, 0.2, 1);
+    height: 40px;
+    border-bottom: 3px solid #bc9060;
+    text-align: center;
 }
 
 .navDiv {
   display: flex;
 }
 
-.gameLogo {
-  font-size: 16px;
+.header img {
   color: white;
-  margin: auto;
-  margin-left: 16px;
+  justify-content: center;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  height: 18px;
 }
 
 .rightSideNav {

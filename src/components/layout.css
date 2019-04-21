@@ -15,14 +15,7 @@ body {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
-  background: linear-gradient(
-        to top,
-        #08192b 1%,
-        #08192b 30%,
-        rgba(25, 26, 27, 0) 100%
-      ),
-      url('../images/guns-of-glory_banner.jpg') no-repeat center top;
-      background-size: cover
+  background: #08192b;
 }
 
 
@@ -646,10 +639,11 @@ pre tt:after {
         rgba(25, 26, 27, 0) 100%
       ),
       url('../images/guns-of-glory_banner.jpg') no-repeat center top;
-      height: 800px;
+      background-size: cover;
       width: 100%;
-      position: absolute;
-      margin-top: 32px;
-      background-size: cover
+    height: 900px;
+    position: absolute;
+    z-index: -1;
+     margin-top: -32px 
   }
 

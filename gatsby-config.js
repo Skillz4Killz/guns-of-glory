@@ -14,7 +14,7 @@ module.exports = {
         short_name: "starter",
         start_url: "/",
         background_color: "#bc9060",
-        theme_color: "#bc9060",
+        theme_color: "#050D18",
         display: 'fullscreen',
         icon: "src/images/gatsby-icon.png", // This path is relative to the root of the site.
       },

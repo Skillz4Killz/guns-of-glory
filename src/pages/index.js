@@ -81,7 +81,8 @@ import Analytics from "../components/analytics"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <div>
+    <div style={{ minHeight: '100vh'}}>
+      <div className='banner'></div>
       <h1 style={{ color: 'white', fontSize: '24px', position: 'relative', marginTop: '32px', textAlign: 'center' }}>Your Profile Page</h1>
         <Analytics buildings={Object.values(player.buildings)}></Analytics>
         <Tabs>
@@ -126,8 +127,8 @@ const IndexPage = () => (
         width: "100%",
       }}
     >
-      <p>© {new Date().getFullYear()}, Copyright GoGHub</p>
-      <p>
+      <p style={{margin:'0'}}>© {new Date().getFullYear()}, Copyright GoGHub</p>
+      <p style={{ margin: '0' }}>
         GoGHub is not affiliated or part of Guns of Glory. All Guns of Glory
         copyrights and art assets belong to Guns of Glory.
           </p>

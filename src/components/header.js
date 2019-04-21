@@ -5,13 +5,9 @@ import "./header.css"
 
 const Header = ({ siteTitle }) => {
   return (
-    <header className="header">
-      <div className="navDiv">
-        <h1 className='gameLogo'>GoGHub</h1>
-        <div className="rightSideNav">
-        </div>
-      </div>
-    </header>
+    <div className="header">
+        <img src={require('../images/Logo.png')}></img>
+    </div>
   )
 }
 
