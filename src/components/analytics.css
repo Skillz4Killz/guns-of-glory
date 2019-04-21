@@ -19,8 +19,7 @@
   text-align: center;
   color: #bc9060;
   position: relative;
-  margin-left: 8px;
-  margin-right: 8px;
+  margin-left: 16px;
   margin-top: 16px;
   align-items: center;
   margin-bottom: 32px;
@@ -78,6 +77,6 @@ margin: 0;
         width: 0px;
     }
     ::-webkit-scrollbar-thumb:horizontal{
-        background: #bc9060;
+        background: #bc9060a1;
         border-radius: 10px;
     }

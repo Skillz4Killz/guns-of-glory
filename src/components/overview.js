@@ -111,7 +111,7 @@ export default props => {
 
 	return (
 		<div>
-			<h1 style={{ position: 'relative', color: 'white', fontSize: '24px', position: 'relative', marginTop: '32px', textAlign: 'center'}}>Recommended Upgrades</h1>
+			<h1 style={{ position: 'relative', color: 'white', fontSize: '24px', marginTop: '32px', textAlign: 'center'}}>Recommended Upgrades</h1>
 			<div className="itemGrid">
 				{sortedValues.map((value, index) => (
 					<SingleItem

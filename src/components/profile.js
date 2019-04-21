@@ -31,7 +31,7 @@ const Profile = () => {
           <Tracker player={player} category="inner" />
         </TabPanel>
         <TabPanel>
-          <Tracker player={player} category="outer" />
+          <Tracker player={player} category="Farm" />
         </TabPanel>
         <TabPanel>
           <ComingSoon />

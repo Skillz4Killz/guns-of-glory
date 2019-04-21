@@ -10,7 +10,7 @@
   font-size: 24px;
   color: #bc9060;
   position: relative;
-  margin-left: 8px;
+  margin-left: 16px;
   margin-top: 10px;
 }
 
@@ -35,39 +35,40 @@
 	text-align: center;
 }
 
+.ItemInfo{
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.Ab{
+  margin-left: 16px;
+  margin-bottom: 0px;
+  height: 48px; 
+}
+
 .itemBuildingName {
   font-family: "Roboto";
   font-weight: bold;
   font-size: 12px;
   color: #bc9060;
-	margin-top: -65px;
-	margin-left: 85px;
-	position: relative;
+  position: relative;
+  margin-bottom: -5px;
 }
 
 .itemResources {
   font-size: 12px;
-	color: #bc9060;
-  margin-top: -20px;
-	margin-left: 85px;
-}
-
-.itemResourceName {
-  font-size: 12px;
   color: #6f879f;
-	margin-bottom: 12px;
-	margin-top: -15px;
-	margin-left: 43px;
+  height: 20px;
 }
 
-.itemLevelupIconDiv {
-  height: 30px;
-  width: 30px;
+.Checkdone {
+  height: 46px;
+  width: 40px;
   cursor: pointer;
-	margin-top: 2px;
-  font-size: 18px;
-	margin-top: -60px;
-	margin-left: 275px;
+  margin-left: auto;
 }
 
 .done:hover {
@@ -75,9 +76,9 @@
 }
 
 .done {
-  margin-top: -10px;
   font-size: 18px;
-  filter: grayscale()
+  filter: grayscale();
+  
 }
 
 .itemGrid {
@@ -86,4 +87,20 @@
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 auto;
+}
+
+@media (max-width: 560px) {
+    .item {
+  width: 100%;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.Ab{
+  height: 45px; 
+}
+
+.Checkdone {
+  height: 40px;
+}
 }

@@ -26,12 +26,16 @@ class Item extends React.Component {
 
 		return (
 			<div className="item">
-				<img src={this.props.image} alt={this.props.name} className="itemImage" />
+				<div className='ItemInfo'>
 				<div className="itemBadge">{this.state.level}</div>
+				<img src={this.props.image} alt={this.props.name} className="itemImage" />
+				<div className='Ab'>
 				<h3 className="itemBuildingName">{this.props.name}</h3>
 				{<p className="itemResources">{this.state.resources.map((resource) => resource.amount ? `${resource.amount} ${resource.type.substring(0, 1)}` : '').join(' ')}</p>}
-				<div className="itemLevelupIconDiv">
+				</div>
+				<div className="Checkdone">
 					<h1 className="done" onClick={this.finishLevel}><span role="img" aria-label="check"><Check></Check></span></h1>
+					</div>
 				</div>
 			</div>
 		)
