@@ -1,7 +1,7 @@
 import React from 'react'
-// import { StyledFirebaseAuth } from 'react-firebaseui'
+import { StyledFirebaseAuth } from 'react-firebaseui'
 
-// import { getUiConfig } from '../firebase'
+import { getUiConfig } from '../firebase'
 import { withFirebase } from '../components/FirebaseContext'
 import Header from '../components/header'
 
@@ -18,10 +18,10 @@ const SignIn = ({ firebase }) => (
       <h4>Hey, please login to continue</h4>
       <h5>Landing Page Coming Soon!</h5>
     </div>
-    {/*<StyledFirebaseAuth
+    <StyledFirebaseAuth
       uiConfig={getUiConfig(firebase)}
       firebaseAuth={firebase.auth()}
-    />*/}
+    />
   </div>
 )
 
